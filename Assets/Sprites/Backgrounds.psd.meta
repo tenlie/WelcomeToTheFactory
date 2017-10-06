@@ -1,0 +1,110 @@
+fileFormatVersion: 2
+guid: 556af1a7a5637c441b003524a4e54a81
+timeCreated: 1474181346
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Backgrounds_Top
+    21300002: Backgrounds_Main
+    21300004: Backgrounds_Bottom
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -3
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: Backgrounds_Top
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1575
+        width: 1282
+        height: 722
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -570.76697, y: 322.4348}
+        - {x: -570.76697, y: -321.5652}
+        - {x: 571.23303, y: -321.5652}
+        - {x: 571.23303, y: 322.4348}
+    - name: Backgrounds_Main
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 843
+        width: 1282
+        height: 722
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 9}
+      outline:
+      - - {x: -571.03394, y: 322.63654}
+        - {x: -571.03394, y: -321.36346}
+        - {x: 571.96606, y: -321.36346}
+        - {x: 571.96606, y: 322.63654}
+    - name: Backgrounds_Bottom
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 90
+        width: 1282
+        height: 723
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -570.8765, y: 322.13913}
+        - {x: -570.8765, y: -321.86087}
+        - {x: 571.1235, y: -321.86087}
+        - {x: 571.1235, y: 322.13913}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

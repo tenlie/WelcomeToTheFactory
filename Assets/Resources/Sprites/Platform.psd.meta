@@ -1,0 +1,202 @@
+fileFormatVersion: 2
+guid: fb731fa639947724dbc623c696a85ab4
+timeCreated: 1464483466
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Platform_1
+    21300002: Platform_2
+    21300004: Platform_2
+    21300006: Platform_4
+    21300008: Platform_0
+    21300010: Platform_3
+    21300012: Platform_6
+    21300014: Platform_4
+    21300016: Platform_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 1024
+    textureFormat: -3
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: Platform_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 824
+        width: 320
+        height: 125
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 320, y: 71}
+        - {x: 320, y: 111}
+        - {x: 318, y: 114}
+        - {x: 313, y: 121}
+        - {x: 307, y: 125}
+        - {x: 9, y: 125}
+        - {x: 0, y: 114}
+        - {x: 0, y: 69}
+        - {x: 16, y: 0}
+        - {x: 109, y: 0}
+        - {x: 118, y: 10}
+        - {x: 265, y: 0}
+        - {x: 301, y: 0}
+    - name: Platform_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 765
+        width: 281
+        height: 23
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 320, y: 71}
+        - {x: 320, y: 111}
+        - {x: 318, y: 114}
+        - {x: 313, y: 121}
+        - {x: 307, y: 125}
+        - {x: 9, y: 125}
+        - {x: 0, y: 114}
+        - {x: 0, y: 69}
+        - {x: 16, y: 0}
+        - {x: 109, y: 0}
+        - {x: 118, y: 10}
+        - {x: 265, y: 0}
+        - {x: 301, y: 0}
+        - {x: 320, y: 71}
+        - {x: 320, y: 111}
+        - {x: 318, y: 114}
+        - {x: 313, y: 121}
+        - {x: 307, y: 125}
+        - {x: 9, y: 125}
+        - {x: 0, y: 114}
+        - {x: 0, y: 69}
+        - {x: 16, y: 0}
+        - {x: 109, y: 0}
+        - {x: 118, y: 10}
+        - {x: 265, y: 0}
+        - {x: 301, y: 0}
+      - - {x: 320, y: 71}
+        - {x: 320, y: 111}
+        - {x: 318, y: 114}
+        - {x: 313, y: 121}
+        - {x: 307, y: 125}
+        - {x: 9, y: 125}
+        - {x: 0, y: 114}
+        - {x: 0, y: 69}
+        - {x: 16, y: 0}
+        - {x: 109, y: 0}
+        - {x: 118, y: 10}
+        - {x: 265, y: 0}
+        - {x: 301, y: 0}
+    - name: Platform_2
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 696
+        width: 281
+        height: 50
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 91, y: 0}
+        - {x: 91, y: 50}
+        - {x: 0, y: 50}
+        - {x: 0, y: 0}
+      - - {x: 257, y: 50}
+        - {x: 257, y: 0}
+        - {x: 281, y: 0}
+        - {x: 281, y: 50}
+    - name: Platform_3
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 582
+        width: 281
+        height: 100
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 91, y: 0}
+        - {x: 91, y: 100}
+        - {x: 0, y: 100}
+        - {x: 0, y: 0}
+      - - {x: 257, y: 100}
+        - {x: 257, y: 0}
+        - {x: 281, y: 0}
+        - {x: 281, y: 100}
+    - name: Platform_4
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 412
+        width: 281
+        height: 149
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 91, y: 0}
+        - {x: 91, y: 149}
+        - {x: 0, y: 149}
+        - {x: 0, y: 0}
+      - - {x: 257, y: 149}
+        - {x: 257, y: 0}
+        - {x: 281, y: 0}
+        - {x: 281, y: 149}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,20 @@
+<dependencies>
+  <packages>
+    <package>com.android.support:support-v4:23.1+</package>
+    <package>com.google.android.gms:play-services-auth:9+</package>
+    <package>com.google.android.gms:play-services-games:9+</package>
+    <package>com.google.android.gms:play-services-nearby:9+</package>
+  </packages>
+  <files>
+    <file>Assets/Plugins/Android/play-services-auth-9.8.0.aar</file>
+    <file>Assets/Plugins/Android/play-services-auth-base-9.8.0.aar</file>
+    <file>Assets/Plugins/Android/play-services-base-9.8.0.aar</file>
+    <file>Assets/Plugins/Android/play-services-basement-9.8.0.aar</file>
+    <file>Assets/Plugins/Android/play-services-drive-9.8.0.aar</file>
+    <file>Assets/Plugins/Android/play-services-games-9.8.0.aar</file>
+    <file>Assets/Plugins/Android/play-services-nearby-9.8.0.aar</file>
+    <file>Assets/Plugins/Android/play-services-tasks-9.8.0.aar</file>
+    <file>Assets/Plugins/Android/support-annotations-24.0.0.jar</file>
+    <file>Assets/Plugins/Android/support-v4-24.0.0.aar</file>
+  </files>
+</dependencies>

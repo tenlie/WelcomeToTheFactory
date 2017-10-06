@@ -1,0 +1,32 @@
+﻿KEY,English,한국어
+Flag,Flag-US,Flag-KR
+Language,English,한국어
+Settings,Settings,설정
+Music,Music,음악
+SFX,SFX,효과음
+Controls,Controls,조작 설정
+OfficialWebsite,Official Website,공식 카페
+Credits,Credits,제작진
+TermsOfUse,Terms Of Use,이용약관
+Difficulty,Difficulty,난이도
+Easy,Easy,쉬움
+Normal,Normal,보통
+Hard,Hard,어려움
+Clear,Clear,성공
+Fail,Fail,실패
+Restart,Restart,다시 하기
+Resume,Resume,계속 하기
+Quit,Quit,나가기
+NextStage,Next,다음곡
+QuitGame?,Quit Game?,게임을 종료하시겠습니까?
+QuitGame,Quit Game,게임 종료
+Cancel,Cancel,취소
+Contact,Contact,연락하기
+AutoRestart,Auto Restart,자동재시작
+Vertical,Vertical,상하
+Horizontal,Horizontal,좌우
+Paused,Paused,일시정지
+Perfect,PERFECT,완벽해
+Great,GREAT,대단해
+Good,GOOD,좋아
+Miss,MISS,MISS

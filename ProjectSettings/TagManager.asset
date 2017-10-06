@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - AttackTrigger
+  - Middlegrounds
+  - Foreground
+  - Player_Body
+  - Player_Hair
+  - Player Bounds
+  - AttackRangeTrigger
+  - Middleground2
+  - Middleground1
+  - SpannerCollider
+  - Missile
+  - UNLOAD
+  - Obstacle
+  - NoteCollider
+  - CLEAR
+  - LOAD
+  - OffCameraBounds
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - NGUI
+  - Platforms
+  - Enemies
+  - Obstacles
+  - Projectiles
+  - GUI
+  - NoteCollider
+  - Ignore
+  - Player
+  - Effect
+  - Ground
+  - Foreground
+  - Middleground
+  - Background
+  - Lighting
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 1677585861
+    locked: 0
+  - name: Middleground
+    uniqueID: 131164877
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: DeathEffect
+    uniqueID: 3593270655
+    locked: 0
+  - name: SubAtkEffect
+    uniqueID: 468348527
+    locked: 0
+  - name: MoveEffect
+    uniqueID: 261715199
+    locked: 0
+  - name: Foreground
+    uniqueID: 3762787497
+    locked: 0
+  - name: Player
+    uniqueID: 4110293643
+    locked: 0
+  - name: MainAtkEffect
+    uniqueID: 10786375
+    locked: 0
+  - name: DamageEffect
+    uniqueID: 1995877287
+    locked: 0
+  - name: Lighting
+    uniqueID: 284490553
+    locked: 0
+  - name: CameraFilter
+    uniqueID: 3899574839
+    locked: 0
