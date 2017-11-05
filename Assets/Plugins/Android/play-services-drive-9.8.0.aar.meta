@@ -2,7 +2,7 @@ fileFormatVersion: 2
 guid: 92fcfe056efffdc41bbf3fd5447c95d7
 labels:
 - gpsr
-timeCreated: 1477821794
+timeCreated: 1508595407
 licenseType: Free
 PluginImporter:
   serializedVersion: 1
@@ -12,7 +12,8 @@ PluginImporter:
   platformData:
     Android:
       enabled: 1
-      settings: {}
+      settings:
+        CPU: ARMv7
     Any:
       enabled: 0
       settings: {}

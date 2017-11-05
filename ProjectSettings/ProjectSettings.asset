@@ -160,7 +160,7 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Public/Documents/Unity Projects/WTF Development/user.keystore
+  AndroidKeystoreName: C:/Users/Public/Documents/Unity Projects/WelcomeToTheFactory/user.keystore
   AndroidKeyaliasName: welcome to the factory
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
