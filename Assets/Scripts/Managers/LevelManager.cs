@@ -103,6 +103,8 @@ public class LevelManager : MonoBehaviour
         //재생 및 싱크 처리
         SaveData.LoadOption();
         SaveData.LoadHiScore();
+        ScreenFade.Fade(Color.black, 1f, 0f, 2f, 0f, true);
+
 
         StageName = SceneManager.GetActiveScene().name;
         StageIdx = int.Parse(StageName.Substring(5, 2));
@@ -668,25 +670,25 @@ public class LevelManager : MonoBehaviour
 
     public void OnPauseBtnClicked()
     {
-        SoundManager.Instance.PlaySFX(InGameSFX.COMMOM_BTN);
+        SoundManager.Instance.PlaySFX(InGameSFX.POPUP_BTN);
         PauseGame();
     }
 
     public void OnResumeBtnClicked()
     {
-        SoundManager.Instance.PlaySFX(InGameSFX.COMMOM_BTN);
+        SoundManager.Instance.PlaySFX(InGameSFX.POPUP_BTN);
         ResumeGame();
     }
 
     public void OnRestartBtnClicked()
     {
-        SoundManager.Instance.PlaySFX(InGameSFX.COMMOM_BTN);
+        SoundManager.Instance.PlaySFX(InGameSFX.POPUP_BTN);
         RestartStage();
     }
 
     public void OnQuitBtnClicked()
     {
-        SoundManager.Instance.PlaySFX(InGameSFX.COMMOM_BTN);
+        SoundManager.Instance.PlaySFX(InGameSFX.POPUP_BTN);
         ReturnToMain();
     }
 

@@ -187,7 +187,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: -2.2, z: 1}
+  m_LocalPosition: {x: -3, y: -2.4, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -233,7 +233,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.7, z: 0}
+  m_LocalPosition: {x: 0, y: 1.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -477,6 +477,7 @@ MonoBehaviour:
     AttackFrequency: 0.01
     SpeedForSlowingDown: 3
   PlayerBody: {fileID: 113680}
+  Foregrounds: {fileID: 0}
   SpeedForSlowingDown: 0
   JumpEffect: {fileID: 152274, guid: c63051809e210d04eadbab71a5d5e59b, type: 2}
   DeathEffect: {fileID: 112796, guid: a66d782651322544facbaf67e8ffd764, type: 2}

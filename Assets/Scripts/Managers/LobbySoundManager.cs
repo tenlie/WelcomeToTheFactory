@@ -4,14 +4,21 @@ using System.Collections;
 public enum LobbySFX
 {
     COMMON_BTN,
-    PLAY_BTN,
+    POPUP_BTN,
+    STAGE_PLAY_BTN,
     STAGE_SWIPE,
     STAGE_START
 }
 
 public class LobbySoundManager : MonoBehaviour
 {
+    // Singleton
     public static LobbySoundManager Instance { get; private set; }
+    
+    /// <summary>
+    /// BGM Preview
+    /// </summary>
+    public AudioSource BGMAudioSource;
 
     public AudioClip Stage00;
     public AudioClip Stage01;
@@ -20,18 +27,60 @@ public class LobbySoundManager : MonoBehaviour
     public AudioClip Stage04;
     public AudioClip Stage05;
 
-    public AudioClip CommonBtn;
-    public AudioClip PlayBtn;
-    public AudioClip StageSwipe;
-    public AudioClip StageStart;
-
-    public AudioSource BGMAudioSource;
+    /// <summary>
+    /// StandAlone SFX
+    /// </summary>
     public AudioSource SFXAudioSource;
 
-    void Awake()
+    public AudioClip CommonBtn;
+    public AudioClip PopupBtn;
+    public AudioClip StagePlayBtn;
+    public AudioClip StageSwipe;
+
+    /// <summary>
+    /// Android SFX
+    /// </summary>
+    public string AOSCommonBtnFile;
+    public string AOSPopupBtnFile;
+    public string AOSStagePlayBtnFile;
+    public string AOSStageSwipeFile;
+
+    public float AOSVolume;
+
+    private int _AOSCommonBtnID;
+    private int _AOSPopupBtnID;
+    private int _AOSStagePlayBtnID;
+    private int _AOSStageSwipeID;
+
+
+    public void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(gameObject);
+
         BGMAudioSource.clip = Stage00;
+
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            LoadAOSAudio();
+        }
+    }
+
+    public void LoadAOSAudio()
+    {
+        AndroidNativeAudio.makePool();
+
+        AOSCommonBtnFile = "Android Native Audio/" + AOSCommonBtnFile.Trim();
+        _AOSCommonBtnID = AndroidNativeAudio.load(AOSCommonBtnFile);
+
+        AOSPopupBtnFile = "Android Native Audio/" + AOSPopupBtnFile.Trim();
+        _AOSPopupBtnID = AndroidNativeAudio.load(AOSPopupBtnFile);
+
+        AOSStagePlayBtnFile = "Android Native Audio/" + AOSStagePlayBtnFile.Trim();
+        _AOSStagePlayBtnID = AndroidNativeAudio.load(AOSStagePlayBtnFile);
+
+        AOSStageSwipeFile = "Android Native Audio/" + AOSStageSwipeFile.Trim();
+        _AOSStageSwipeID = AndroidNativeAudio.load(AOSStageSwipeFile);
     }
 
     public void PlayBGM()
@@ -56,7 +105,7 @@ public class LobbySoundManager : MonoBehaviour
 
     public void MuteBGM()
     {
-            BGMAudioSource.volume = 0.0f;
+        BGMAudioSource.volume = 0.0f;
     }
 
     public void UnmuteBGM()
@@ -96,16 +145,16 @@ public class LobbySoundManager : MonoBehaviour
         switch (lobbySFX)
         {
             case LobbySFX.COMMON_BTN:
-                SFXAudioSource.PlayOneShot(CommonBtn, 1f);
+                if (Application.platform == RuntimePlatform.Android) AndroidNativeAudio.play(_AOSCommonBtnID, AOSVolume, AOSVolume); else SFXAudioSource.PlayOneShot(CommonBtn, 1f);
                 break;
-            case LobbySFX.PLAY_BTN:
-                SFXAudioSource.PlayOneShot(PlayBtn, 1f);
+            case LobbySFX.POPUP_BTN:
+                if (Application.platform == RuntimePlatform.Android) AndroidNativeAudio.play(_AOSPopupBtnID, AOSVolume, AOSVolume); else SFXAudioSource.PlayOneShot(PopupBtn, 1f);
+                break;
+            case LobbySFX.STAGE_PLAY_BTN:
+                if (Application.platform == RuntimePlatform.Android) AndroidNativeAudio.play(_AOSStagePlayBtnID, AOSVolume, AOSVolume); else SFXAudioSource.PlayOneShot(StagePlayBtn, 1f);
                 break;
             case LobbySFX.STAGE_SWIPE:
-                SFXAudioSource.PlayOneShot(StageSwipe, 1f);
-                break;
-            case LobbySFX.STAGE_START:
-                SFXAudioSource.PlayOneShot(StageStart, 1f);
+                if (Application.platform == RuntimePlatform.Android) AndroidNativeAudio.play(_AOSStageSwipeID, AOSVolume, AOSVolume); else SFXAudioSource.PlayOneShot(StageSwipe, 1f);
                 break;
             default:
                 break;

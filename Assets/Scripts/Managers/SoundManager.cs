@@ -4,7 +4,8 @@ using System;
 
 public enum InGameSFX
 {
-    COMMOM_BTN
+    COMMOM_BTN,
+    POPUP_BTN
 }
 
 public class SoundManager : MonoBehaviour
@@ -21,9 +22,11 @@ public class SoundManager : MonoBehaviour
     public AudioSource BgmAudio;
     public float VolumeForStandAlone;
 
-    //SFX
     public AudioSource SFXAudioSource;
-    public AudioClip ComonBtn;
+    //SFX Common Button
+    public AudioClip CommonBtn;
+    //SFX Popup Button
+    public AudioClip PopupBtn;
 
     //Note for StandAlone
     public AudioSource[] NoteAudio;
@@ -141,7 +144,10 @@ public class SoundManager : MonoBehaviour
         switch (inGameSFX)
         {
             case InGameSFX.COMMOM_BTN:
-                SFXAudioSource.PlayOneShot(ComonBtn, 1f);
+                SFXAudioSource.PlayOneShot(CommonBtn, 1f);
+                break;
+            case InGameSFX.POPUP_BTN:
+                SFXAudioSource.PlayOneShot(PopupBtn, 1f);
                 break;
             default:
                 break;

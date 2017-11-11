@@ -9,10 +9,13 @@ public class AttackTrigger : MonoBehaviour {
         if (col.CompareTag("Enemy"))
         {
             enemyAI = col.GetComponent<EnemyAI>();
-            if (enemyAI == null)
-                return;
 
-            enemyAI.Kill();
+            if (null != enemyAI)
+            {
+                return;
+            }
+
+            enemyAI.KillSelf();
         }
     }
 }

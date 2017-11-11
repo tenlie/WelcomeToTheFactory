@@ -29,7 +29,8 @@ public class EOneTypeTwoAI : MonoBehaviour {
             Invoke("Fall", 0.5f);
         }
 
-        return;
+        //Block Input For Tests
+        //return;
 
         if (col.CompareTag("Player"))
         {

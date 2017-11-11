@@ -17,8 +17,6 @@ public class ObstacleAI : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        return;
-
         if (col.CompareTag("Player"))
         {
             var player = col.GetComponent<Player>();

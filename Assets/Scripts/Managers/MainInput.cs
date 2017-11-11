@@ -222,7 +222,7 @@ public class MainInput : MonoBehaviour
     IEnumerator OpenSettingsCo()
     {
         LobbySoundManager.Instance.MuteBGM();
-        LobbySoundManager.Instance.PlaySFX(LobbySFX.COMMON_BTN);
+        LobbySoundManager.Instance.PlaySFX(LobbySFX.POPUP_BTN);
 
         UICamera.enabled = false;
         mainGM.HideAllUI();
@@ -246,7 +246,7 @@ public class MainInput : MonoBehaviour
 
     IEnumerator CloseSettingsCo()
     {
-        LobbySoundManager.Instance.PlaySFX(LobbySFX.COMMON_BTN);
+        LobbySoundManager.Instance.PlaySFX(LobbySFX.POPUP_BTN);
 
         SaveData.SaveOption();
         //TweenAlpha.Begin(mainGM.mainButtons[2], 0f, 0f);
@@ -282,7 +282,7 @@ public class MainInput : MonoBehaviour
 
     IEnumerator OpenCreditsCo()
     {
-        LobbySoundManager.Instance.PlaySFX(LobbySFX.COMMON_BTN);
+        LobbySoundManager.Instance.PlaySFX(LobbySFX.POPUP_BTN);
 
         mainGM.HideSettingsUI();
         yield return new WaitForSeconds(0.5f);
@@ -303,7 +303,7 @@ public class MainInput : MonoBehaviour
 
     IEnumerator CloseCreditsCo()
     {
-        LobbySoundManager.Instance.PlaySFX(LobbySFX.COMMON_BTN);
+        LobbySoundManager.Instance.PlaySFX(LobbySFX.POPUP_BTN);
 
         TweenAlpha.Begin(mainGM.pn_Popup_Credits, 0.5f, 0);
         yield return new WaitForSeconds(0.5f);
@@ -324,7 +324,7 @@ public class MainInput : MonoBehaviour
 
     IEnumerator OpenTermsOfUseCo()
     {
-        LobbySoundManager.Instance.PlaySFX(LobbySFX.COMMON_BTN);
+        LobbySoundManager.Instance.PlaySFX(LobbySFX.POPUP_BTN);
 
         mainGM.HideSettingsUI();
         yield return new WaitForSeconds(0.5f);
@@ -345,7 +345,7 @@ public class MainInput : MonoBehaviour
 
     IEnumerator CloseTermsOfUseCo()
     {
-        LobbySoundManager.Instance.PlaySFX(LobbySFX.COMMON_BTN);
+        LobbySoundManager.Instance.PlaySFX(LobbySFX.POPUP_BTN);
 
         TweenAlpha.Begin(mainGM.pn_Popup_TermsOfUse, 0.5f, 0);
         yield return new WaitForSeconds(0.5f);
@@ -361,7 +361,7 @@ public class MainInput : MonoBehaviour
 #if UNITY_EDITOR
         Debug.Log(this.name + " >>> OpenQuitPopup()");
 #endif
-        LobbySoundManager.Instance.PlaySFX(LobbySFX.COMMON_BTN);
+        LobbySoundManager.Instance.PlaySFX(LobbySFX.POPUP_BTN);
         NGUITools.SetActive(mainGM.pn_Popup_Settings, true);
     }
 
@@ -565,7 +565,7 @@ public class MainInput : MonoBehaviour
 
     public void ConnectToOfficalWebsite()
     {
-        LobbySoundManager.Instance.PlaySFX(LobbySFX.COMMON_BTN);
+        LobbySoundManager.Instance.PlaySFX(LobbySFX.POPUP_BTN);
 
         Application.OpenURL(string.Format("http://{0}", officalWebsiteURL));
     }
@@ -589,7 +589,7 @@ public class MainInput : MonoBehaviour
 #if UNITY_EDITOR
         Debug.Log(this.name + " >>> OpenStageContactsPopup()");
 #endif
-        LobbySoundManager.Instance.PlaySFX(LobbySFX.COMMON_BTN);
+        LobbySoundManager.Instance.PlaySFX(LobbySFX.POPUP_BTN);
 
         GameObject pn_Popup_Contacts = go.transform.Find("Pn_Popup_Contacts").gameObject;
         NGUITools.SetActive(pn_Popup_Contacts, true);
@@ -615,7 +615,7 @@ public class MainInput : MonoBehaviour
 
     public void CloseStageContactsPopup(GameObject go)
     {
-        LobbySoundManager.Instance.PlaySFX(LobbySFX.COMMON_BTN);
+        LobbySoundManager.Instance.PlaySFX(LobbySFX.POPUP_BTN);
 
          //StartCoroutine("CloseStageContactsCo", go);
         GameObject pn_Popup_Contacts = go.transform.Find("Pn_Popup_Contacts").gameObject;

@@ -141,7 +141,7 @@ public class Note : MonoBehaviour
 
         if (Application.platform == RuntimePlatform.Android)
         {
-            _soundID = AndroidNativeAudio.play(_fileID, 0.1f, 0.1f); //Android
+            _soundID = AndroidNativeAudio.play(_fileID, 0.3f, 0.3f); //Android
         }
         else
         {

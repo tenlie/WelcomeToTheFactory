@@ -186,7 +186,7 @@ public class MainGM : MonoBehaviour
         Debug.Log(this.name + " >>> PlayStage >>> " + go.name + " Pressed. Loading " + go.name.Substring(0, 7) + "...");
 #endif
         LobbySoundManager.Instance.StopBGM();
-        LobbySoundManager.Instance.PlaySFX(LobbySFX.PLAY_BTN);
+        LobbySoundManager.Instance.PlaySFX(LobbySFX.STAGE_PLAY_BTN);
         GameObject Btn_PlayStage = go.transform.Find("Btn_PlayStage").gameObject;
         GameObject Img_PlayBrightness = Btn_PlayStage.transform.Find("Img_PlayBrightness").gameObject;
         GameObject Img_Play = Btn_PlayStage.transform.Find("Img_Play").gameObject;
@@ -202,15 +202,13 @@ public class MainGM : MonoBehaviour
         TweenScale.Begin(Img_Play, 0.2f, new Vector3(2.5f, 2.5f, 0.0f));
         //Alpha 효과
         TweenAlpha.Begin(Img_Play, 0.2f, 0.0f);
-        NGUITools.SetActive(pn_FadeOut, true);
-        pn_FadeOut.GetComponent<UIPanel>().alpha = 0f;
-        yield return new WaitForSeconds(0.5f);
-
-        LobbySoundManager.Instance.PlaySFX(LobbySFX.STAGE_START);
-        yield return new WaitForSeconds(0.3f);
-        TweenAlpha.Begin(pn_FadeOut.gameObject, 0.7f, 1f);
-
-        //Splash 0, Main 1이므로 각 stage의 index는 currStageIdx + 2
+        //NGUITools.SetActive(pn_FadeOut, true);
+        //pn_FadeOut.GetComponent<UIPanel>().alpha = 0f;
+        //LobbySoundManager.Instance.PlaySFX(LobbySFX.STAGE_PLAY_BTN);
+        //TweenAlpha.Begin(pn_FadeOut.gameObject, 0.7f, 1f);
+        yield return new WaitForSeconds(0.2f);
+        ScreenFade.Fade(Color.black, 0f, 1f, 1f, 0f, true);
+        //Splashsceen=0, Lobby=1이므로 각 stage의 index는 currStageIdx + 2
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(currStageIdx + 2);
         asyncOperation.allowSceneActivation = false;
 
@@ -218,7 +216,7 @@ public class MainGM : MonoBehaviour
         {
             while (asyncOperation.progress == 0.9f)
             {
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(1f);
                 asyncOperation.allowSceneActivation = true;
             }
             yield return null;

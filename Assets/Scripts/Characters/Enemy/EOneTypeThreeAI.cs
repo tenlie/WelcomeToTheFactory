@@ -24,7 +24,8 @@ public class EOneTypeThreeAI : MonoBehaviour {
             iTween.MoveBy(transform.parent.gameObject, iTween.Hash("x", -12.8f, "easeType", iTween.EaseType.linear, "time", 2f));
         }
 
-        return;
+        //Block Hits For Tests
+        //return;
 
         if (col.CompareTag("Player"))
         {
