@@ -202,10 +202,6 @@ public class MainGM : MonoBehaviour
         TweenScale.Begin(Img_Play, 0.2f, new Vector3(2.5f, 2.5f, 0.0f));
         //Alpha 효과
         TweenAlpha.Begin(Img_Play, 0.2f, 0.0f);
-        //NGUITools.SetActive(pn_FadeOut, true);
-        //pn_FadeOut.GetComponent<UIPanel>().alpha = 0f;
-        //LobbySoundManager.Instance.PlaySFX(LobbySFX.STAGE_PLAY_BTN);
-        //TweenAlpha.Begin(pn_FadeOut.gameObject, 0.7f, 1f);
         yield return new WaitForSeconds(0.2f);
         ScreenFade.Fade(Color.black, 0f, 1f, 1f, 0f, true);
         //Splashsceen=0, Lobby=1이므로 각 stage의 index는 currStageIdx + 2

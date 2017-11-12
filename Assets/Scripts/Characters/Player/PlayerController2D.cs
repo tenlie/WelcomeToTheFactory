@@ -155,11 +155,11 @@ public class PlayerController2D : MonoBehaviour
 
         if (State.IsGrounded)
         {
-            Debug.Log("JUM PPOS : " + Foregrounds.transform.position.x);
+            //Debug.Log("JUM PPOS : " + Foregrounds.transform.position.x);
             SetVerticalForce(Parameters.JumpMagnitude);
             _jumpCount = 1;
             _jumpCooltime = 0.01f;
-            Instantiate(JumpEffect, new Vector2(_transform.position.x-0.6f, _transform.position.y), Quaternion.identity);
+            GameObject jumpEffect = Instantiate(JumpEffect, new Vector3(_transform.position.x-0.6f, _transform.position.y, _transform.position.z), Quaternion.identity) as GameObject;
             InputType = "jump";
         }
         else

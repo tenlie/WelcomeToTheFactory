@@ -204,7 +204,7 @@ public class Player : MonoBehaviour
         if (!col.CompareTag("NoteCollider") || IsDead)
             return;
 
-        Debug.Log("InputType: " + _controller.InputType);
+        //Debug.Log("InputType: " + _controller.InputType);
 
         if (_controller.InputType.Equals(""))
             return;

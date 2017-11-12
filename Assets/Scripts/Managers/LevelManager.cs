@@ -235,7 +235,6 @@ public class LevelManager : MonoBehaviour
             state = EvalState.MISS;
         }
         EvalQuoteCtrl.ResetQuote(state);
-        Debug.Log("hehe");
     }
 
     public void AddScore(int points)
