@@ -10,11 +10,8 @@ public enum LobbySFX
     STAGE_START
 }
 
-public class LobbySoundManager : MonoBehaviour
+public class LobbySoundManager : SingletonBehaviour<LobbySoundManager>
 {
-    // Singleton
-    public static LobbySoundManager Instance { get; private set; }
-    
     /// <summary>
     /// BGM Preview
     /// </summary>
@@ -53,10 +50,9 @@ public class LobbySoundManager : MonoBehaviour
     private int _AOSStageSwipeID;
 
 
-    public void Awake()
+    public override void Awake()
     {
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        base.Awake();
 
         BGMAudioSource.clip = Stage00;
 

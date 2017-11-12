@@ -16,5 +16,7 @@ public class SingletonBehaviour<T> : MonoBehaviour where T : SingletonBehaviour<
         {
             Instance = (T)this;
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 }
