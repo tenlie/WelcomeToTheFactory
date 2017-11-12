@@ -100,8 +100,8 @@ public class CEvalQuoteCtrl : CFollowCtrl
                 break;
         }
         _widget.alpha = 1f;
-        Debug.Log("_time : " + _time);
+        //Debug.Log("_time : " + _time);
         _time = 0f;
-        Debug.Log("_time : " + _time);
+        //Debug.Log("_time : " + _time);
     }
 }
