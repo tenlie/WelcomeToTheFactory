@@ -2208,7 +2208,7 @@ GameObject:
   - 4: {fileID: 176860428}
   - 82: {fileID: 176860429}
   m_Layer: 0
-  m_Name: SFX
+  m_Name: SFXAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3213,7 +3213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 241477600}
-  stageMusic: {fileID: 1438786329}
+  stageMusic: {fileID: 0}
   speed: 3.2
 --- !u!23 &231700904
 MeshRenderer:
@@ -17437,7 +17437,7 @@ GameObject:
   - 4: {fileID: 1246574155}
   - 82: {fileID: 1246574156}
   m_Layer: 0
-  m_Name: BgmAudio
+  m_Name: BgmAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17465,7 +17465,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7b3f97e43d68cab45bd91ccb31152ac0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2d5462f46d1124d41a673ccfc3cb0aaf, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -18938,7 +18938,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1438786330}
   - 114: {fileID: 1438786334}
-  - 82: {fileID: 1438786329}
   m_Layer: 0
   m_Name: Sound Manager
   m_TagString: Untagged
@@ -18946,80 +18945,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1438786329
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1438786328}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2d5462f46d1124d41a673ccfc3cb0aaf, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!4 &1438786330
 Transform:
   m_ObjectHideFlags: 0
@@ -19051,13 +18976,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804ccdb34efe7ea4396f64bc477e3865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BgmFileName: WTF_Stage00.mp3
-  VolumeForAndroid: 0
-  BgmAudio: {fileID: 1771212006}
-  VolumeForStandAlone: 0
+  BgmAudioSource: {fileID: 1771212006}
+  StandAloneVolume: 1
   SFXAudioSource: {fileID: 176860429}
   CommonBtn: {fileID: 8300000, guid: c5aed55bc86737f4ea0ec3c7ca553b5c, type: 3}
   PopupBtn: {fileID: 8300000, guid: efa070fce8870174ca6e4979ca75da78, type: 3}
+  AOSBgmFile: 
+  VolumeForAndroid: 0
+  AOSSFXVolume: 1
+  AOSCommonBtnFile: CommonBtn.wav
+  AOSPopupBtnFile: PopupBtn.wav
   NoteAudio:
   - {fileID: 1567728450}
   - {fileID: 198235954}
@@ -23223,7 +23151,7 @@ GameObject:
   - 4: {fileID: 1771212007}
   - 82: {fileID: 1771212006}
   m_Layer: 0
-  m_Name: BgmAudio
+  m_Name: BgmAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23238,7 +23166,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7b3f97e43d68cab45bd91ccb31152ac0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2d5462f46d1124d41a673ccfc3cb0aaf, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -24288,7 +24216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 241477600}
-  stageMusic: {fileID: 1438786329}
+  stageMusic: {fileID: 0}
   speed: 1.6
 --- !u!23 &1894422903
 MeshRenderer:
@@ -24805,7 +24733,7 @@ Prefab:
     - target: {fileID: 11425720, guid: 74f3b3b9c8232d342942fb3fb2077e35, type: 2}
       propertyPath: StageBGM
       value: 
-      objectReference: {fileID: 1438786329}
+      objectReference: {fileID: 0}
     - target: {fileID: 11425720, guid: 74f3b3b9c8232d342942fb3fb2077e35, type: 2}
       propertyPath: CameraFollow
       value: 
@@ -26469,7 +26397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 241477600}
-  stageMusic: {fileID: 1438786329}
+  stageMusic: {fileID: 0}
   speed: 0.8
 --- !u!23 &2053501049
 MeshRenderer:

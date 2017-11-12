@@ -4,29 +4,40 @@ using System;
 
 public enum InGameSFX
 {
-    COMMOM_BTN,
+    COMMON_BTN,
     POPUP_BTN
 }
 
 public class SoundManager : MonoBehaviour
 {
-    //싱글톤 패턴
+    //Basic Singleton
     public static SoundManager Instance { get; private set; }
 
-    //Bgm for Android
-    public int BgmID { get; private set; }
-    private bool _isBgmLoaded;
-    public string BgmFileName;
-    public float VolumeForAndroid;
-    //Bgm for StandAlone
-    public AudioSource BgmAudio;
-    public float VolumeForStandAlone;
+    #region StandAlone BGM
+    public AudioSource BgmAudioSource;
+    public float StandAloneVolume;
+    #endregion
 
+    #region StandAlone SFX
     public AudioSource SFXAudioSource;
-    //SFX Common Button
     public AudioClip CommonBtn;
-    //SFX Popup Button
     public AudioClip PopupBtn;
+    #endregion
+
+    #region AOS BGM
+    public int AOSBgmID { get; private set; }
+    private bool _isAOSBgmLoaded;
+    public string AOSBgmFile;
+    public float VolumeForAndroid;
+    #endregion
+
+    #region AOS SFX
+    public float AOSSFXVolume;
+    public string AOSCommonBtnFile;
+    public string AOSPopupBtnFile;
+    private int _AOSCommonBtnID;
+    private int _AOSPopupBtnID;
+    #endregion
 
     //Note for StandAlone
     public AudioSource[] NoteAudio;
@@ -43,30 +54,42 @@ public class SoundManager : MonoBehaviour
     {
         Instance = this;
         NoteAudioIdx = 0;
+
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            LoadAOSAudio();
+        }
     }
 
-    public void LoadBgm()
+    public void LoadAOSAudio()
     {
         AndroidNativeAudio.makePool();
-        BgmFileName = "Android Native Audio/" + BgmFileName.Trim();
-        BgmID = ANAMusic.load(BgmFileName, false, true, BgmLoaded);
-        ANAMusic.setPlayInBackground(BgmID, false);
+
+        AOSBgmFile = "Android Native Audio/" + AOSBgmFile.Trim();
+        AOSBgmID = ANAMusic.load(AOSBgmFile, false, true, BgmLoaded);
+        ANAMusic.setPlayInBackground(AOSBgmID, false);
+
+        AOSCommonBtnFile = "Android Native Audio/" + AOSCommonBtnFile.Trim();
+        _AOSCommonBtnID = AndroidNativeAudio.load(AOSCommonBtnFile);
+
+        AOSPopupBtnFile = "Android Native Audio/" + AOSPopupBtnFile.Trim();
+        _AOSPopupBtnID = AndroidNativeAudio.load(AOSPopupBtnFile);
     }
 
     public void BgmLoaded(int musicID)
     {
-        _isBgmLoaded = true;
+        _isAOSBgmLoaded = true;
     }
 
     public void PlayBgm()
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            ANAMusic.play(BgmID);
+            ANAMusic.play(AOSBgmID);
         }
         else
         {
-            BgmAudio.Play();
+            BgmAudioSource.Play();
         }
     }
 
@@ -74,11 +97,11 @@ public class SoundManager : MonoBehaviour
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            ANAMusic.pause(BgmID);
+            ANAMusic.pause(AOSBgmID);
         }
         else
         {
-            BgmAudio.Pause();
+            BgmAudioSource.Pause();
         }
     }
 
@@ -86,20 +109,20 @@ public class SoundManager : MonoBehaviour
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            ANAMusic.pause(BgmID);
-            ANAMusic.seekTo(BgmID, 0);
+            ANAMusic.pause(AOSBgmID);
+            ANAMusic.seekTo(AOSBgmID, 0);
         }
         else
         {
-            BgmAudio.Stop();
+            BgmAudioSource.Stop();
         }
     }
 
     public void ReleaseBgm()
     {
         Debug.Log("ReleaseBgm");
-        ANAMusic.release(BgmID);
-        _isBgmLoaded = false;
+        ANAMusic.release(AOSBgmID);
+        _isAOSBgmLoaded = false;
     }
 
     public void SetSync()
@@ -116,11 +139,11 @@ public class SoundManager : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         if (Application.platform == RuntimePlatform.Android)
         {
-            Foreground.position = new Vector3((float)Math.Round(-((ANAMusic.getCurrentPosition(BgmID) / 1000.0f) * 12.8f - 12.8f - 3.0f), 3), Foreground.position.y, Foreground.position.z);
+            Foreground.position = new Vector3((float)Math.Round(-((ANAMusic.getCurrentPosition(AOSBgmID) / 1000.0f) * 12.8f - 12.8f - 3.0f), 3), Foreground.position.y, Foreground.position.z);
         }
         else
         {
-            Foreground.position = new Vector3(((float)Math.Round(-(Math.Round(BgmAudio.time, 3) * 12.8f - 12.8f - 3.0f), 3)), Foreground.position.y, Foreground.position.z);
+            Foreground.position = new Vector3(((float)Math.Round(-(Math.Round(BgmAudioSource.time, 3) * 12.8f - 12.8f - 3.0f), 3)), Foreground.position.y, Foreground.position.z);
         }
     }
 
@@ -143,11 +166,11 @@ public class SoundManager : MonoBehaviour
     {
         switch (inGameSFX)
         {
-            case InGameSFX.COMMOM_BTN:
-                SFXAudioSource.PlayOneShot(CommonBtn, 1f);
+            case InGameSFX.COMMON_BTN:
+                if (Application.platform == RuntimePlatform.Android) AndroidNativeAudio.play(_AOSCommonBtnID, AOSSFXVolume, AOSSFXVolume); else SFXAudioSource.PlayOneShot(CommonBtn, 1f);
                 break;
             case InGameSFX.POPUP_BTN:
-                SFXAudioSource.PlayOneShot(PopupBtn, 1f);
+                if (Application.platform == RuntimePlatform.Android) AndroidNativeAudio.play(_AOSPopupBtnID, AOSSFXVolume, AOSSFXVolume); else SFXAudioSource.PlayOneShot(PopupBtn, 1f);
                 break;
             default:
                 break;
