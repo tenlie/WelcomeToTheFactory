@@ -68,6 +68,15 @@ public class TutorialCharacterAI : MonoBehaviour
         event21 = Event21; event22 = Event22; event23 = Event23; event24 = Event24; event25 = Event25; event26 = Event26; event27 = Event27;
     }
 
+    public void Update()
+    {
+        PlayTutorial();
+
+        animator.SetBool("IsGrounded", playerController.State.IsGrounded);
+        animator.SetBool("IsJumping", playerController.State.IsJumpingUp);
+        animator.SetBool("IsDoubleJumping", playerController.State.IsDoubleJumping);
+    }
+
     void PlayTutorial()
     {
         if (event1 != null && 3f <= _bgmTime) { event1(); event1 = null; return; }
@@ -116,23 +125,13 @@ public class TutorialCharacterAI : MonoBehaviour
 
         if (event23 != null && 62.2f <= _bgmTime) { event23(); event23 = null; return; }
 
-        if (event24 != null && 62.233f <= _bgmTime) { event24(); event24 = null; return; }
+        if (event24 != null && 66.233f <= _bgmTime) { event24(); event24 = null; return; }
 
         if (event25 != null && 70.367f <= _bgmTime) { event25(); event25 = null; return; }
 
         if (event26 != null && 71.167f <= _bgmTime) { event26(); event26 = null; return; }
 
         if (event27 != null && 71.9f <= _bgmTime) { event27(); event27 = null; return; }
-    }
-
-    public void Update()
-    {
-        PlayTutorial();
-
-
-        animator.SetBool("IsGrounded", playerController.State.IsGrounded);
-        animator.SetBool("IsJumping", playerController.State.IsJumpingUp);
-        animator.SetBool("IsDoubleJumping", playerController.State.IsDoubleJumping);
     }
 
     public bool IsInputJump(Vector2 touchPosition)
@@ -167,6 +166,39 @@ public class TutorialCharacterAI : MonoBehaviour
         iTween.MoveBy(gameObject, iTween.Hash("x", -0.5, "easeType", iTween.EaseType.linear, "time", 0.2f));
     }
 
+    public void ShowQuote()
+    {
+        StartCoroutine(ShowQuoteCo());
+    }
+
+    IEnumerator ShowQuoteCo()
+    {
+        quote.SetActive(true);
+        TweenUpQuote();
+        yield return new WaitForSeconds(0.1f);
+        TweenDownQuote();
+        yield return new WaitForSeconds(2f);
+        quote.SetActive(false);
+    }
+
+    public void TweenUpQuote()
+    {
+        Debug.Log("Hongyeol::TweenUpQuote");
+        iTween.MoveBy(quote, iTween.Hash("y", 0.02f, "easeType", iTween.EaseType.spring, "time", 0.1f));
+    }
+
+    public void TweenDownQuote()
+    {
+        Debug.Log("Hongyeol::TweenDownQuote");
+        iTween.MoveBy(quote, iTween.Hash("y", -0.02f, "easeType", iTween.EaseType.linear, "time", 0.1f));
+    }
+
+    public void ResizeQuote()
+    {
+        quoteLabel.AssumeNaturalSize();
+        quoteTop.GetComponent<UIWidget>().width = quoteLabel.width + 40;
+    }
+
     public void Event1()
     {
         //화면 밖으로부터 달려옴
@@ -175,29 +207,23 @@ public class TutorialCharacterAI : MonoBehaviour
 
     public void Event2()
     {
-        quoteLabel.text = "깨어났구나 리츠";
-        quoteLabel.AssumeNaturalSize();
-        quoteTop.GetComponent<UIWidget>().width = quoteLabel.width + 40;
-        quote.SetActive(true);
-        Invoke("HideQuote", 2f);
+        quoteLabel.text = string.Format(Localization.Get("TutorialQuote1"),",");
+        ResizeQuote();
+        ShowQuote();
     }
 
     public void Event3()
     {
-        quoteLabel.GetComponent<UILabel>().text = "폭동이 일어났어!";
-        quoteLabel.AssumeNaturalSize();
-        quoteTop.GetComponent<UIWidget>().width = quoteLabel.width + 40;
-        quote.SetActive(true);
-        Invoke("HideQuote", 2f);
+        quoteLabel.GetComponent<UILabel>().text = Localization.Get("TutorialQuote2");
+        ResizeQuote();
+        ShowQuote();
     }
 
     public void Event4()
     {
-        quoteLabel.GetComponent<UILabel>().text = "무슨 일인지 알아봐야 해!";
-        quoteLabel.AssumeNaturalSize();
-        quoteTop.GetComponent<UIWidget>().width = quoteLabel.width + 40;
-        quote.SetActive(true);
-        Invoke("HideQuote", 2f);
+        quoteLabel.GetComponent<UILabel>().text = Localization.Get("TutorialQuote3");
+        ResizeQuote();
+        ShowQuote();
     }
 
     public void Event5()
@@ -217,29 +243,23 @@ public class TutorialCharacterAI : MonoBehaviour
 
     public void Event8()
     {
-        quoteLabel.GetComponent<UILabel>().text = "공장 안 쪽까지 침입하다니!";
-        quoteLabel.AssumeNaturalSize();
-        quoteTop.GetComponent<UIWidget>().width = quoteLabel.width + 40;
-        quote.SetActive(true);
-        Invoke("HideQuote", 2f);
+        quoteLabel.GetComponent<UILabel>().text = Localization.Get("TutorialQuote4");
+        ResizeQuote();
+        ShowQuote();
     }
 
     public void Event9()
     {
-        quoteLabel.GetComponent<UILabel>().text = "퇴치하자!";
-        quoteLabel.AssumeNaturalSize();
-        quoteTop.GetComponent<UIWidget>().width = quoteLabel.width + 40;
-        quote.SetActive(true);
-        Invoke("HideQuote", 3f);
+        quoteLabel.GetComponent<UILabel>().text = Localization.Get("TutorialQuote5");
+        ResizeQuote();
+        ShowQuote();
     }
 
     public void Event10()
     {
-        quoteLabel.GetComponent<UILabel>().text = "앞장 설테니 따라와!";
-        quoteLabel.AssumeNaturalSize();
-        quoteTop.GetComponent<UIWidget>().width = quoteLabel.width + 40;
-        quote.SetActive(true);
-        Invoke("HideQuote", 2f);
+        quoteLabel.GetComponent<UILabel>().text = Localization.Get("TutorialQuote6");
+        ResizeQuote();
+        ShowQuote();
     }
 
     public void Event11()
@@ -254,25 +274,30 @@ public class TutorialCharacterAI : MonoBehaviour
 
     public void Event13()
     {
-        quoteLabel.GetComponent<UILabel>().text = "화면 오른쪽/ 아래쪽(설정값을 따름)을 눌러서 점프할 수 있어.";
-        quoteLabel.AssumeNaturalSize();
-        quoteTop.GetComponent<UIWidget>().width = quoteLabel.width + 40;
-        quote.SetActive(true);
-        Invoke("HideQuote", 2f);
+        string str = string.Empty;
+        if (SaveData.Controls.Equals("Vertical"))
+        {
+            str = Localization.Get("Bottom Side");
+        }
+        else
+        {
+            str = Localization.Get("Left Side");
+        }
+
+        quoteLabel.GetComponent<UILabel>().text = string.Format(Localization.Get("TutorialQuote7"), str);
+        ResizeQuote();
+        ShowQuote();
 
         tutorialGradient.SetActive(true);
         tutorialGradient.GetComponent<TweenAlpha>().enabled = true;
         Invoke("DisableTutorialGradient", 6f);
-
     }
 
     public void Event14()
     {
-        quoteLabel.GetComponent<UILabel>().text = "장애물이야! 뛰어!";
-        quoteLabel.AssumeNaturalSize();
-        quoteTop.GetComponent<UIWidget>().width = quoteLabel.width + 40;
-        quote.SetActive(true);
-        Invoke("HideQuote", 2f);
+        quoteLabel.GetComponent<UILabel>().text = Localization.Get("TutorialQuote8");
+        ResizeQuote();
+        ShowQuote();
     }
 
     public void Event15()
@@ -283,11 +308,19 @@ public class TutorialCharacterAI : MonoBehaviour
     public void Event16()
     {
         //점멸
-        quoteLabel.GetComponent<UILabel>().text = "화면 왼쪽/위쪽(설정값을 따름)을 누르면 공격할 수 있어.";
-        quoteLabel.AssumeNaturalSize();
-        quoteTop.GetComponent<UIWidget>().width = quoteLabel.width + 40;
-        quote.SetActive(true);
-        Invoke("HideQuote", 2f);
+        string str = string.Empty;
+        if (SaveData.Controls.Equals("Vertical"))
+        {
+            str = Localization.Get("Top Side");
+        }
+        else
+        {
+            str = Localization.Get("Right Side");
+        }
+
+        quoteLabel.GetComponent<UILabel>().text = string.Format(Localization.Get("TutorialQuote9"), str);
+        ResizeQuote();
+        ShowQuote();
 
         if (SaveData.Controls.Equals("Vertical"))
         {
@@ -315,11 +348,9 @@ public class TutorialCharacterAI : MonoBehaviour
 
     public void Event19()
     {
-        quoteLabel.GetComponent<UILabel>().text = "적이 온다!공격해!";
-        quoteLabel.AssumeNaturalSize();
-        quoteTop.GetComponent<UIWidget>().width = quoteLabel.width + 40;
-        quote.SetActive(true);
-        Invoke("HideQuote", 2f);
+        quoteLabel.GetComponent<UILabel>().text = Localization.Get("TutorialQuote10");
+        ResizeQuote();
+        ShowQuote();
     }
 
     public void Event20()
@@ -339,20 +370,16 @@ public class TutorialCharacterAI : MonoBehaviour
 
     private void Event23()
     {
-        quoteLabel.GetComponent<UILabel>().text = "좋아, 돌파하자.";
-        quoteLabel.AssumeNaturalSize();
-        quoteTop.GetComponent<UIWidget>().width = quoteLabel.width + 40;
-        quote.SetActive(true);
-        Invoke("HideQuote", 2f);
+        quoteLabel.GetComponent<UILabel>().text = string.Format(Localization.Get("TutorialQuote11"), ",");
+        ResizeQuote();
+        ShowQuote();
     }
 
     private void Event24()
     {
-        quoteLabel.GetComponent<UILabel>().text = "놓치지 말고 따라와!";
-        quoteLabel.AssumeNaturalSize();
-        quoteTop.GetComponent<UIWidget>().width = quoteLabel.width + 40;
-        quote.SetActive(true);
-        Invoke("HideQuote", 2f);
+        quoteLabel.GetComponent<UILabel>().text = Localization.Get("TutorialQuote12");
+        ResizeQuote();
+        ShowQuote();
     }
 
     private void Event25()
