@@ -2051,7 +2051,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 3.5960708
+  orthographic size: 3.5970802
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -4035,6 +4035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 0}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1001 &254299121
@@ -4138,6 +4139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 0}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1 &263210121 stripped
@@ -4170,6 +4172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 0}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1 &275604431
@@ -4615,6 +4618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 0}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1 &310395612
@@ -4929,6 +4933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 0}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1 &327650642
@@ -9686,6 +9691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 0}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1 &670457864
@@ -10465,6 +10471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 0}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1 &722485301
@@ -11238,6 +11245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 0}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1 &801082684
@@ -16020,7 +16028,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1132168358}
   m_Layer: 19
-  m_Name: Notes
+  m_Name: NoteAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16635,7 +16643,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163329683}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -300, y: -47, z: 0}
+  m_LocalPosition: {x: -300, y: -40, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -17862,6 +17870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 1525161559}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1 &1305768310
@@ -19661,7 +19670,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448750, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 111546, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
       propertyPath: m_Name
@@ -20649,7 +20658,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448750, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6147828, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
       propertyPath: m_Size.x
@@ -20828,6 +20837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 1722612994}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!4 &1553354884 stripped
@@ -20879,6 +20889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 0}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1 &1566457811
@@ -21080,7 +21091,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448750, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6147828, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
       propertyPath: m_Size.x
@@ -21231,6 +21242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 0}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1001 &1586951868
@@ -21352,6 +21364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 1776056897}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1001 &1599355182
@@ -21467,7 +21480,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1604209600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -47, z: 0}
+  m_LocalPosition: {x: 0, y: -40, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -22016,6 +22029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 0}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1 &1672763870
@@ -22496,7 +22510,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448750, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6147828, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
       propertyPath: m_Size.x
@@ -23263,6 +23277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 1573870621}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!4 &1783411903 stripped
@@ -24266,6 +24281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 0}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!4 &1897930999 stripped
@@ -24835,6 +24851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParentAnchor: {fileID: 0}
   DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
   DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1 &1937350758
@@ -25966,6 +25983,14 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 59d4d99d86800a7479b32cf3285a389f, type: 2}
+    - target: {fileID: 21238904, guid: 37032229f476d2645b1e1dca7515eeac, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9507170, guid: 37032229f476d2645b1e1dca7515eeac, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37032229f476d2645b1e1dca7515eeac, type: 2}
   m_IsPrefabParent: 0
@@ -27085,27 +27110,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448750, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6147828, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
-      propertyPath: m_Size.x
-      value: 0.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 448750, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 448750, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 102160, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
-      propertyPath: m_Name
-      value: E01_Pig_Idle
-      objectReference: {fileID: 0}
-    - target: {fileID: 111546, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
-      propertyPath: m_Name
-      value: Body
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
@@ -27114,23 +27119,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 448750, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
   m_PrefabInternal: {fileID: 2095104889}
---- !u!1 &2095104891 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 111546, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
-  m_PrefabInternal: {fileID: 2095104889}
---- !u!114 &2095104892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2095104891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05f2bba012e93054c937b938678ba7c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeathEffect: {fileID: 104352, guid: de04f5dc51930f449b7ac578578204bd, type: 2}
-  DamageEffect: {fileID: 185178, guid: 5bd7a721297310f46a2719002f9ca2f2, type: 2}
 --- !u!1 &2099650501
 GameObject:
   m_ObjectHideFlags: 0
