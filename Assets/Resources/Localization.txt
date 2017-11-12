@@ -30,3 +30,19 @@ Perfect,PERFECT,완벽해
 Great,GREAT,대단해
 Good,GOOD,좋아
 Miss,MISS,MISS
+Top Side,top side,위쪽
+Bottom Side,bottom side,아래쪽
+Right Side,right side,오른쪽
+Left Side,left side,왼쪽
+TutorialQuote1,You're awake{0} Litz.,깨어났구나{0} 리츠.
+TutorialQuote2,Riot has occurred!,폭동이 일어났어!
+TutorialQuote3,Need to find out what's going on!,무슨 일인지 알아봐야 해!
+TutorialQuote4,They have broken into the factory!,공장 안 쪽까지 침입하다니!
+TutorialQuote5,Let's punish them!,퇴치하자!
+TutorialQuote6,Follow me!,앞장 설테니 따라와!
+TutorialQuote7,Tap {0} of the screen to jump.,화면 {0}을 눌러서 점프할 수 있어.
+TutorialQuote8,There's an obstacle! Jump!,장애물이야! 뛰어!
+TutorialQuote9,Tap {0} of the screen to attack.,화면 {0}을 누르면 공격할 수 있어.
+TutorialQuote10,There's an enemy! Attack!,적이 온다! 공격해!
+TutorialQuote11,Good{0} Let's break through.,좋아{0} 돌파하자.
+TutorialQuote12,Show them what you got!,놓치지 말고 따라와!
