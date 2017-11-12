@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     public bool IsDead { get; private set; }
     public bool HasEnteredCamera { get; private set; }
 
+    public Transform ParentAnchor;
     public GameObject DeathEffect;
     public GameObject DamageEffect;
 
@@ -35,7 +36,8 @@ public class EnemyAI : MonoBehaviour
             return;
         }
 
-        Instantiate(DeathEffect, new Vector2(_transform.position.x + 0.5f, _transform.position.y + 0.5f), Quaternion.identity);
+        GameObject deathEffect = Instantiate(DeathEffect, new Vector3(_transform.position.x, _transform.position.y + 1f, _transform.position.z), Quaternion.identity) as GameObject;
+        deathEffect.transform.parent = ParentAnchor;
 
         IsDead = true;
         _collider.enabled = false;

@@ -14,6 +14,11 @@ public class EOneTypeOneAI : EnemyAI
         gameObject.SetActive(false);
     }
 
+    public override void TakeDamage(Vector3 hitPos)
+    {
+        base.TakeDamage(hitPos);
+    }
+
     public override void OnTriggerEnter2D(Collider2D col)
     {
         base.OnTriggerEnter2D(col);

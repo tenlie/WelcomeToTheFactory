@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 420596}
   - 212: {fileID: 21231848}
   - 95: {fileID: 9549090}
-  - 114: {fileID: 11481182}
+  - 114: {fileID: 11445702}
   m_Layer: 17
   m_Name: EnemyDeathEffect
   m_TagString: Untagged
@@ -48,7 +48,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11481182
+--- !u!114 &11445702
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481647027b13b9947903b7981cb145c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Increment: {x: -5, y: 0}
-  Duration: 0.3
-  SpeedAcceleration: 12.8
+  Increment: {x: 0, y: 0}
+  Duration: 0.6
+  SpeedAcceleration: 0
 --- !u!212 &21231848
 SpriteRenderer:
   m_ObjectHideFlags: 1
