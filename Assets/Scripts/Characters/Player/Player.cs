@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     public Collider2D AttackTrigger;
     public GameObject Player_Body;
     public GameObject Player_Hair;
+    public GameObject JudgeLine;
 
     public Animator Animator;
     public readonly static int ANISTS_chr_litz_chg = Animator.StringToHash("Attack Layer.chr_litz_chg");
@@ -66,6 +67,15 @@ public class Player : MonoBehaviour
         Player_Hair = GameObject.FindWithTag("Player_Hair");
         Player_Hair.SetActive(true);
         AttackTrigger.enabled = false;
+
+        if (LevelManager.Instance.DebugMode)
+        {
+            JudgeLine.SetActive(true);
+        }
+        else
+        {
+            JudgeLine.SetActive(false);
+        }
     }
 
     public void Update()

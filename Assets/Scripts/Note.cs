@@ -3,14 +3,6 @@ using System.Collections;
 
 public class Note : MonoBehaviour
 {
-    //Sound for Android
-    public string AudioFileName;
-    private int _fileID;
-    private int _soundID;
-    //Sound for StandAlone
-    public AudioClip _audioClip;
-    public AudioSource _audioSource { get; set; }
-
     private Transform _transform;
     private BoxCollider2D _boxCollider2D;
     public float ScrollSpeed;
@@ -20,6 +12,14 @@ public class Note : MonoBehaviour
     public bool isRealNote { get; set; }
     public bool hadInput { get; set; }
 
+    //Sound for Android
+    public string AudioFileName;
+    private int _fileID;
+    private int _soundID;
+    //Sound for StandAlone
+    public AudioClip _audioClip;
+    public AudioSource _audioSource { get; set; }
+
     public DifficultyLevel Difficulty;
     public enum DifficultyLevel
     {
@@ -27,6 +27,8 @@ public class Note : MonoBehaviour
         Normal, //1
         Hard    //2
     }
+
+    public GameObject Judgeline;
 
     void Start()
     {
@@ -42,6 +44,15 @@ public class Note : MonoBehaviour
         if (Application.platform != RuntimePlatform.Android)
         {
             _audioSource = GetComponent<AudioSource>();
+        }
+
+        if (LevelManager.Instance.DebugMode)
+        {
+            Judgeline.SetActive(true);
+        }
+        else
+        {
+            Judgeline.SetActive(false);
         }
     }
 

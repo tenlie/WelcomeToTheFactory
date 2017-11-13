@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     //싱글톤 패턴. {get; private set;} = readonly
     public static LevelManager Instance { get; private set; }
+    public bool DebugMode;
 
     //스테이지
     public int StageFPS;
