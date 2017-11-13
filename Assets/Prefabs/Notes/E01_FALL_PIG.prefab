@@ -318,11 +318,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_7.wav
-  _audioClip: {fileID: 8300000, guid: b08253b273c72fe4f8126838e38e0c1f, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_C_7.wav
+  _audioClip: {fileID: 8300000, guid: 7917185acb524fe4fa6214af947962d4, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 150322}
 --- !u!114 &11447074
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -249,7 +249,7 @@ GameObject:
   - 50: {fileID: 37803947}
   - 114: {fileID: 37803946}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,11 +279,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_3.wav
-  _audioClip: {fileID: 8300000, guid: 2aafcefabf067564491dd08cf1ea9e01, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_3.wav
+  _audioClip: {fileID: 8300000, guid: fdcd8d8ca21e7b64bb3a46ed1e805e59, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 563991851}
 --- !u!50 &37803947
 Rigidbody2D:
   serializedVersion: 2
@@ -401,7 +402,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -945,11 +946,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_7.wav
-  _audioClip: {fileID: 8300000, guid: b08253b273c72fe4f8126838e38e0c1f, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_C_7.wav
+  _audioClip: {fileID: 8300000, guid: 7917185acb524fe4fa6214af947962d4, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 578879089}
 --- !u!50 &81344024
 Rigidbody2D:
   serializedVersion: 2
@@ -1087,6 +1089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e3f5bb8bdd15149960b0827a93462d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DebugMode: 0
   StageFPS: 100
   SongName: Welcome to the Factory
   ComboLblArr:
@@ -1335,7 +1338,7 @@ GameObject:
   - 50: {fileID: 131475054}
   - 114: {fileID: 131475053}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1365,11 +1368,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_4.wav
-  _audioClip: {fileID: 8300000, guid: 3b95ee6232d74a144ab893c96dd17cab, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_4.wav
+  _audioClip: {fileID: 8300000, guid: 4f969a0fad607284bbb58580ae870082, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 1958214686}
 --- !u!50 &131475054
 Rigidbody2D:
   serializedVersion: 2
@@ -1595,7 +1599,7 @@ GameObject:
   - 50: {fileID: 145412380}
   - 114: {fileID: 145412379}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1625,11 +1629,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_6,wav
-  _audioClip: {fileID: 8300000, guid: 7d29feb28c13f794c87b5fd42e979dd4, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_6,wav
+  _audioClip: {fileID: 8300000, guid: 015136e550c8bc14db540b18e8f4be26, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 1663780133}
 --- !u!50 &145412380
 Rigidbody2D:
   serializedVersion: 2
@@ -2051,7 +2056,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 3.5970802
+  orthographic size: 3.5978985
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -2413,7 +2418,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2516,7 +2521,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3257,7 +3262,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 236584110}
   m_Layer: 19
-  m_Name: J_C_9
+  m_Name: J_C_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4633,7 +4638,7 @@ GameObject:
   - 50: {fileID: 310395615}
   - 114: {fileID: 310395614}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4663,11 +4668,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_2.wav
-  _audioClip: {fileID: 8300000, guid: 2c88f254cd2a23740af4d0820eb76454, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_2.wav
+  _audioClip: {fileID: 8300000, guid: 8a012a7880039d647b6b2336edc2f341, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 1959218770}
 --- !u!50 &310395615
 Rigidbody2D:
   serializedVersion: 2
@@ -5420,11 +5426,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_3.wav
-  _audioClip: {fileID: 8300000, guid: 2aafcefabf067564491dd08cf1ea9e01, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_C_3.wav
+  _audioClip: {fileID: 8300000, guid: fdcd8d8ca21e7b64bb3a46ed1e805e59, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 1243028766}
 --- !u!50 &369103608
 Rigidbody2D:
   serializedVersion: 2
@@ -5732,7 +5739,7 @@ GameObject:
   - 50: {fileID: 417079330}
   - 114: {fileID: 417079329}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5762,11 +5769,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_2.wav
-  _audioClip: {fileID: 8300000, guid: 2c88f254cd2a23740af4d0820eb76454, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_2.wav
+  _audioClip: {fileID: 8300000, guid: 8a012a7880039d647b6b2336edc2f341, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 1456749634}
 --- !u!50 &417079330
 Rigidbody2D:
   serializedVersion: 2
@@ -7101,11 +7109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_2.wav
-  _audioClip: {fileID: 8300000, guid: 2c88f254cd2a23740af4d0820eb76454, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_C_2.wav
+  _audioClip: {fileID: 8300000, guid: 8a012a7880039d647b6b2336edc2f341, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 559748660}
 --- !u!50 &448715668
 Rigidbody2D:
   serializedVersion: 2
@@ -8212,7 +8221,7 @@ Transform:
   m_GameObject: {fileID: 552037479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0027816412, y: 0.0027816412, z: 0.0027816412}
+  m_LocalScale: {x: 0.0027777778, y: 0.0027777778, z: 0.0027777778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1003608963}
@@ -8402,11 +8411,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_V_1.wav
-  _audioClip: {fileID: 8300000, guid: 77aa7595f0f91fc408378b97723e1dcb, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_V_1.wav
+  _audioClip: {fileID: 8300000, guid: f62b76991072b654baadb949fe68a904, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 2064418857}
 --- !u!50 &563813196
 Rigidbody2D:
   serializedVersion: 2
@@ -10591,11 +10601,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_3.wav
-  _audioClip: {fileID: 8300000, guid: 2aafcefabf067564491dd08cf1ea9e01, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_C_3.wav
+  _audioClip: {fileID: 8300000, guid: fdcd8d8ca21e7b64bb3a46ed1e805e59, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 680610880}
 --- !u!50 &725297398
 Rigidbody2D:
   serializedVersion: 2
@@ -11544,11 +11555,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_V_2.wav
-  _audioClip: {fileID: 8300000, guid: 6e71af97ce908d044b4017bce0a58efe, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_V_2.wav
+  _audioClip: {fileID: 8300000, guid: b5b59514380ec0d478162fc6e9f045cc, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 2141038351}
 --- !u!50 &832383239
 Rigidbody2D:
   serializedVersion: 2
@@ -11834,7 +11846,7 @@ GameObject:
   - 50: {fileID: 855145587}
   - 114: {fileID: 855145586}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11864,11 +11876,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_9.wav
-  _audioClip: {fileID: 8300000, guid: 5f42deb8eeaba24489aed1b32e12c0a6, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_9.wav
+  _audioClip: {fileID: 8300000, guid: 4f969a0fad607284bbb58580ae870082, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 897516972}
 --- !u!50 &855145587
 Rigidbody2D:
   serializedVersion: 2
@@ -12520,7 +12533,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -12822,11 +12835,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_4.wav
-  _audioClip: {fileID: 8300000, guid: 3b95ee6232d74a144ab893c96dd17cab, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_C_4.wav
+  _audioClip: {fileID: 8300000, guid: 4f969a0fad607284bbb58580ae870082, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 801082684}
 --- !u!50 &955535329
 Rigidbody2D:
   serializedVersion: 2
@@ -14118,11 +14132,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_4.wav
-  _audioClip: {fileID: 8300000, guid: 3b95ee6232d74a144ab893c96dd17cab, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_C_4.wav
+  _audioClip: {fileID: 8300000, guid: 4f969a0fad607284bbb58580ae870082, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 355587509}
 --- !u!50 &1014199612
 Rigidbody2D:
   serializedVersion: 2
@@ -14298,7 +14313,7 @@ GameObject:
   - 50: {fileID: 1028841854}
   - 114: {fileID: 1028841853}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14328,11 +14343,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_1.wav
-  _audioClip: {fileID: 8300000, guid: 154daec08980a764b97731776a40f7c2, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_1.wav
+  _audioClip: {fileID: 8300000, guid: 44563b2ab052e544baa52d6ed148820c, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 2045039534}
 --- !u!50 &1028841854
 Rigidbody2D:
   serializedVersion: 2
@@ -14456,11 +14472,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_8.wav
-  _audioClip: {fileID: 8300000, guid: e26192beec5e5034c84c7459c3eca73c, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_C_8.wav
+  _audioClip: {fileID: 8300000, guid: bfd70054ae12b4742a122c943869c9ae, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 670457864}
 --- !u!50 &1034007845
 Rigidbody2D:
   serializedVersion: 2
@@ -15239,7 +15256,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1069750403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 621, y: 342, z: 0}
+  m_LocalPosition: {x: 622, y: 343, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -15616,7 +15633,7 @@ GameObject:
   - 50: {fileID: 1095844662}
   - 114: {fileID: 1095844661}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15646,11 +15663,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_5.wav
-  _audioClip: {fileID: 8300000, guid: 5fffab57bd004d04eba46e0beef90ac9, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_5.wav
+  _audioClip: {fileID: 8300000, guid: fdcfdc21fcff9b54bb2f3457a8bfe795, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 1493077069}
 --- !u!50 &1095844662
 Rigidbody2D:
   serializedVersion: 2
@@ -15983,11 +16001,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_V_3.wav
-  _audioClip: {fileID: 8300000, guid: 0f1e3c91dfdbc1c49ba84c5ae3fd70a7, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_V_3.wav
+  _audioClip: {fileID: 8300000, guid: ceb57f9077974d0469c2cd0ffc8d4580, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 695381124}
 --- !u!50 &1125383464
 Rigidbody2D:
   serializedVersion: 2
@@ -16176,7 +16195,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1136034429}
   - 212: {fileID: 1136034430}
-  - 114: {fileID: 1136034431}
   m_Layer: 19
   m_Name: JudgeLine
   m_TagString: NoteCollider
@@ -16227,22 +16245,6 @@ SpriteRenderer:
   m_Color: {r: 0.7941176, g: 0.046712797, b: 0.046712797, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!114 &1136034431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1136034428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_1.wav
-  _audioClip: {fileID: 8300000, guid: 154daec08980a764b97731776a40f7c2, type: 3}
-  ScrollSpeed: 6.4
-  InputType: jump
-  Difficulty: 0
 --- !u!1 &1141839337
 GameObject:
   m_ObjectHideFlags: 0
@@ -16515,11 +16517,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_7.wav
-  _audioClip: {fileID: 8300000, guid: b08253b273c72fe4f8126838e38e0c1f, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_C_7.wav
+  _audioClip: {fileID: 8300000, guid: b08253b273c72fe4f8126838e38e0c1f, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 0}
 --- !u!50 &1158678802
 Rigidbody2D:
   serializedVersion: 2
@@ -17153,11 +17156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_3.wav
-  _audioClip: {fileID: 8300000, guid: 2aafcefabf067564491dd08cf1ea9e01, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_C_3.wav
+  _audioClip: {fileID: 8300000, guid: fdcd8d8ca21e7b64bb3a46ed1e805e59, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 1346377880}
 --- !u!50 &1217219252
 Rigidbody2D:
   serializedVersion: 2
@@ -17201,7 +17205,7 @@ GameObject:
   - 50: {fileID: 1220637432}
   - 114: {fileID: 1220637431}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17231,11 +17235,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_5.wav
-  _audioClip: {fileID: 8300000, guid: 5fffab57bd004d04eba46e0beef90ac9, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_5.wav
+  _audioClip: {fileID: 8300000, guid: fdcfdc21fcff9b54bb2f3457a8bfe795, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 2072003698}
 --- !u!50 &1220637432
 Rigidbody2D:
   serializedVersion: 2
@@ -17704,7 +17709,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1277413572}
   m_Layer: 19
-  m_Name: A_C_8
+  m_Name: A_C_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17789,7 +17794,7 @@ GameObject:
   - 50: {fileID: 1287131488}
   - 114: {fileID: 1287131487}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17819,11 +17824,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_6.wav
-  _audioClip: {fileID: 8300000, guid: 7d29feb28c13f794c87b5fd42e979dd4, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_6.wav
+  _audioClip: {fileID: 8300000, guid: 015136e550c8bc14db540b18e8f4be26, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 880536411}
 --- !u!50 &1287131488
 Rigidbody2D:
   serializedVersion: 2
@@ -18498,11 +18504,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: Note.wav
-  _audioClip: {fileID: 8300000, guid: f30aada0abbdd1244bc5f2e5b7dd4658, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: Note.wav
+  _audioClip: {fileID: 8300000, guid: f30aada0abbdd1244bc5f2e5b7dd4658, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 0}
 --- !u!50 &1373015469
 Rigidbody2D:
   serializedVersion: 2
@@ -18621,7 +18628,7 @@ GameObject:
   - 50: {fileID: 1384961554}
   - 114: {fileID: 1384961553}
   m_Layer: 19
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18651,11 +18658,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_V_2.wav
-  _audioClip: {fileID: 8300000, guid: 6e71af97ce908d044b4017bce0a58efe, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_V_2.wav
+  _audioClip: {fileID: 8300000, guid: 049c60d44c02a8a42b78dc53964c3798, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 1013500647}
 --- !u!50 &1384961554
 Rigidbody2D:
   serializedVersion: 2
@@ -19073,7 +19081,7 @@ GameObject:
   - 50: {fileID: 1442366610}
   - 114: {fileID: 1442366609}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19103,11 +19111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_1.wav
-  _audioClip: {fileID: 8300000, guid: 154daec08980a764b97731776a40f7c2, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_1.wav
+  _audioClip: {fileID: 8300000, guid: 44563b2ab052e544baa52d6ed148820c, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 1136034428}
 --- !u!50 &1442366610
 Rigidbody2D:
   serializedVersion: 2
@@ -19567,7 +19576,7 @@ GameObject:
   - 50: {fileID: 1482693901}
   - 114: {fileID: 1482693900}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19597,11 +19606,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_10.wav
-  _audioClip: {fileID: 8300000, guid: 1e7aea16f741a88419b472fdd1641f55, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_10.wav
+  _audioClip: {fileID: 8300000, guid: 4f969a0fad607284bbb58580ae870082, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 1648019405}
 --- !u!50 &1482693901
 Rigidbody2D:
   serializedVersion: 2
@@ -19907,7 +19917,7 @@ GameObject:
   - 50: {fileID: 1493418855}
   - 114: {fileID: 1493418854}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19937,11 +19947,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_1.wav
-  _audioClip: {fileID: 8300000, guid: 154daec08980a764b97731776a40f7c2, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_1.wav
+  _audioClip: {fileID: 8300000, guid: 44563b2ab052e544baa52d6ed148820c, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 805095650}
 --- !u!50 &1493418855
 Rigidbody2D:
   serializedVersion: 2
@@ -20081,7 +20092,7 @@ GameObject:
   - 50: {fileID: 1496007916}
   - 114: {fileID: 1496007915}
   m_Layer: 14
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20111,11 +20122,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_1.wav
-  _audioClip: {fileID: 8300000, guid: 154daec08980a764b97731776a40f7c2, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_C_1.wav
+  _audioClip: {fileID: 8300000, guid: 44563b2ab052e544baa52d6ed148820c, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 1485272505}
 --- !u!50 &1496007916
 Rigidbody2D:
   serializedVersion: 2
@@ -20444,7 +20456,7 @@ GameObject:
   - 50: {fileID: 1519834311}
   - 114: {fileID: 1519834310}
   m_Layer: 19
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20474,11 +20486,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_V_1.wav
-  _audioClip: {fileID: 8300000, guid: 77aa7595f0f91fc408378b97723e1dcb, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_V_1.wav
+  _audioClip: {fileID: 8300000, guid: f62b76991072b654baadb949fe68a904, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 565542680}
 --- !u!50 &1519834311
 Rigidbody2D:
   serializedVersion: 2
@@ -20874,6 +20887,10 @@ Transform:
   - {fileID: 705193547}
   m_Father: {fileID: 1162911429}
   m_RootOrder: 1
+--- !u!1 &1558626671 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 126038, guid: 02b4052b1d9110042afec4f1202091f7, type: 2}
+  m_PrefabInternal: {fileID: 1805713490}
 --- !u!1 &1566202220 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 111546, guid: a6131091ed8b1b340be8c9819ea2eff1, type: 2}
@@ -20978,7 +20995,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -22184,11 +22201,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_2.wav
-  _audioClip: {fileID: 8300000, guid: 2c88f254cd2a23740af4d0820eb76454, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_C_2.wav
+  _audioClip: {fileID: 8300000, guid: 8a012a7880039d647b6b2336edc2f341, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 1305768310}
 --- !u!50 &1703032975
 Rigidbody2D:
   serializedVersion: 2
@@ -22229,7 +22247,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1709560068}
   m_Layer: 19
-  m_Name: J_C_10
+  m_Name: J_C_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22551,7 +22569,7 @@ GameObject:
   - 50: {fileID: 1724183808}
   - 114: {fileID: 1724183807}
   m_Layer: 19
-  m_Name: Collider
+  m_Name: JudgeCollider
   m_TagString: NoteCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22581,11 +22599,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_V_3.wav
-  _audioClip: {fileID: 8300000, guid: 0f1e3c91dfdbc1c49ba84c5ae3fd70a7, type: 3}
   ScrollSpeed: 6.4
   InputType: jump
+  AudioFileName: WTF_Stage00 Note_V_3.wav
+  _audioClip: {fileID: 8300000, guid: dbac72ab7bdac6f43b61762cb2c0458e, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 1983888157}
 --- !u!50 &1724183808
 Rigidbody2D:
   serializedVersion: 2
@@ -22965,7 +22984,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 474312, guid: 348cccac93195c341b23ee11cba8dbc3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: 1.78
       objectReference: {fileID: 0}
     - target: {fileID: 474312, guid: 348cccac93195c341b23ee11cba8dbc3, type: 2}
       propertyPath: m_LocalPosition.y
@@ -23056,11 +23075,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_8.wav
-  _audioClip: {fileID: 8300000, guid: e26192beec5e5034c84c7459c3eca73c, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_C_8.wav
+  _audioClip: {fileID: 8300000, guid: 05c32d5fef898fd4ca7513c29725b977, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 771527711}
 --- !u!50 &1758927568
 Rigidbody2D:
   serializedVersion: 2
@@ -23531,6 +23551,14 @@ Prefab:
       propertyPath: m_Name
       value: A_C_7
       objectReference: {fileID: 0}
+    - target: {fileID: 11455246, guid: 02b4052b1d9110042afec4f1202091f7, type: 2}
+      propertyPath: _audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7917185acb524fe4fa6214af947962d4, type: 3}
+    - target: {fileID: 11455246, guid: 02b4052b1d9110042afec4f1202091f7, type: 2}
+      propertyPath: Judgeline
+      value: 
+      objectReference: {fileID: 1558626671}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02b4052b1d9110042afec4f1202091f7, type: 2}
   m_IsPrefabParent: 0
@@ -27601,11 +27629,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42796fae0f26446ad81135a0e31e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioFileName: WTF_Stage00 Note_C_7.wav
-  _audioClip: {fileID: 8300000, guid: b08253b273c72fe4f8126838e38e0c1f, type: 3}
   ScrollSpeed: 6.4
   InputType: attack
+  AudioFileName: WTF_Stage00 Note_C_7.wav
+  _audioClip: {fileID: 8300000, guid: 7917185acb524fe4fa6214af947962d4, type: 3}
   Difficulty: 0
+  Judgeline: {fileID: 24983693}
 --- !u!50 &2119575627
 Rigidbody2D:
   serializedVersion: 2
