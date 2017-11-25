@@ -215,7 +215,7 @@ public class Player : MonoBehaviour
         }
         else if (col.CompareTag("CLEAR"))
         {
-            LevelManager.Instance.LevelClear();
+            LevelManager.Instance.ShowLevelClearResult();
         }
     }
 

@@ -3,6 +3,15 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using System;
 
+public enum JudgeState
+{
+    NONE,
+    GOOD,
+    GREAT,
+    PERFECT,
+    MISS
+}
+
 public class LevelManager : MonoBehaviour
 {
     //싱글톤 패턴. {get; private set;} = readonly
@@ -18,13 +27,17 @@ public class LevelManager : MonoBehaviour
     public string SongName;
     public bool IsGameStarted { get; set; }
     public bool IsPaused { get; private set; }
-    public bool IsStageClear { get; private set; }
+    public bool IsLevelCleared { get; private set; }
+    public int NumberOfNotes;
+    private JudgeState[] JudgeArray;
 
     //점수/콤보
     public bool HasNewRecord { get; set; }
     public int HighScore { get; set; }
     public int CurrScore { get; set; }
     public int PrevScore { get; set; }
+    private int fromScore = 0;
+    public float CountDuration;
     private bool _isShowingResult;
     private int _comboCnt;
     private int _comboArrIdx;
@@ -101,9 +114,7 @@ public class LevelManager : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         //노트음원 메모리 로드
         AndroidNativeAudio.makePool();
-        //LoadBgm();
         //데이터 로드
-        //재생 및 싱크 처리
         SaveData.LoadOption();
         SaveData.LoadHiScore();
         ScreenFade.Fade(Color.black, 1f, 0f, 2f, 0f, true);
@@ -114,7 +125,10 @@ public class LevelManager : MonoBehaviour
 
         IsGameStarted = false;
         IsPaused = false;
-        IsStageClear = false;
+        IsLevelCleared = false;
+
+        Debug.Log("NumberOfNotes::" + NumberOfNotes);
+        JudgeArray = new JudgeState[NumberOfNotes];
 
         HighScore = SaveData.HiScore[StageIdx];
         PrevScore = 0;
@@ -146,7 +160,6 @@ public class LevelManager : MonoBehaviour
         NGUITools.SetActive(Pnl_Popup_Clear, false);
 
         Pnl_FadeOut.transform.localPosition = Vector3.zero;
-        //NGUITools.SetActive(Lbl_Evaluation.gameObject, false);
 
         if (SaveData.Controls.Equals("Vertical"))
         {
@@ -170,10 +183,9 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(LoadBgmCo());
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
         EvalQuote.localPosition = new Vector3(-300, EvalQuotePos.position.y * 100, 0);
-        //ScoreCount();
     }
 
     private void SetMap()
@@ -199,7 +211,7 @@ public class LevelManager : MonoBehaviour
     private IEnumerator LoadBgmCo()
     {
         IsGameStarted = true;
-        if(BgmAudio.clip.loadState != AudioDataLoadState.Loaded)
+        if (BgmAudio.clip.loadState != AudioDataLoadState.Loaded)
         {
             Debug.Log("audio loading...");
             yield return null;
@@ -211,7 +223,7 @@ public class LevelManager : MonoBehaviour
 
     public void ScoreCount()
     {
-        if (Player.IsDead || IsStageClear)
+        if (Player.IsDead || IsLevelCleared)
             return;
 
         //Debug.Log("Currscore: " + CurrScore + " PrevScore: " + PrevScore);
@@ -325,8 +337,8 @@ public class LevelManager : MonoBehaviour
         TweenPosition.Begin(lbl_ComboNum.gameObject, 0.001f, new Vector2(-530, 12));
     }
 
-    //판정 처리
     /*
+    //판정 처리
     IEnumerator EvaluationResultCo(int resultIdx, float points)
     {
         _isShowingResult = true;
@@ -336,38 +348,66 @@ public class LevelManager : MonoBehaviour
         _isShowingResult = false;
     }
     */
-
     //점수 디스플레이
-    IEnumerator DisplayScore(UILabel label, int increment)
+    IEnumerator DisplayScore()
     {
-        if (CurrScore > 0)
+        int start = fromScore;
+
+        for (float timer = 0; timer < CountDuration; timer += Time.deltaTime)
         {
-            int score = 0;
-            while (score < CurrScore)
-            {
-                score = score + increment;
-                label.text = score.ToString();
-                yield return null;
-            }
+            float progress = timer / CountDuration;
+            fromScore = (int)Mathf.Lerp(start, CurrScore, progress);
+            Debug.Log("fromScore::" + fromScore);
+            Clear_Txt_Score.text = fromScore.ToString();
+            yield return null;
         }
+
+        Time.timeScale = 0f;
     }
 
     //스테이지 클리어 처리
-    public void LevelClear()
+    public void ShowLevelClearResult()
     {
-        StartCoroutine(LevelClearCo());
-        Invoke("FinishStage", 5f);
+        Invoke("ShowClearPopup", 3f);
     }
 
-    IEnumerator LevelClearCo()
+    private void ShowClearPopup()
     {
+        IsLevelCleared = true;
+
         StopBgm();
-        IsStageClear = true;
         GameObject resultLevel = Pnl_Popup_Clear.transform.Find("Img_Level").gameObject;
         TweenAlpha.Begin(resultLevel, 0.001f, 0.0f);
         NGUITools.SetActive(Pnl_Popup_Clear, true);
 
-        StartCoroutine(DisplayScore(Clear_Txt_Score, 10));
+        StartCoroutine(DisplayScore());
+
+        if (HasNewRecord)
+        {
+            HighScore = CurrScore;
+            SaveData.HiScore[StageIdx] = (int)HighScore;
+            SaveData.SaveHiScore();
+            NGUITools.SetActive(Clear_Lbl_NewRecord.gameObject, true);
+            Clear_Txt_Score.gameObject.GetComponent<TweenColor>().enabled = true;
+        }
+
+        TweenPosition.Begin(resultLevel, 0.2f, new Vector2(290, -45));
+        TweenScale.Begin(resultLevel, 0.2f, new Vector3(1, 1, 1));
+        TweenAlpha.Begin(resultLevel, 0.2f, 1.0f);
+        
+        //Time.timeScale = 0f;
+    }
+
+    /*
+    IEnumerator LevelClearCo()
+    {
+        StopBgm();
+        IsLevelCleared = true;
+        GameObject resultLevel = Pnl_Popup_Clear.transform.Find("Img_Level").gameObject;
+        TweenAlpha.Begin(resultLevel, 0.001f, 0.0f);
+        NGUITools.SetActive(Pnl_Popup_Clear, true);
+
+        //StartCoroutine(DisplayScore(Clear_Txt_Score, 10));
 
         if (HasNewRecord)
         {
@@ -384,11 +424,7 @@ public class LevelManager : MonoBehaviour
         TweenScale.Begin(resultLevel, 0.2f, new Vector3(1, 1, 1));
         TweenAlpha.Begin(resultLevel, 0.2f, 1.0f);
     }
-
-    void FinishStage()
-    {
-        Time.timeScale = 0f;
-    }
+    */
 
     public void KillPlayer()
     {
@@ -423,10 +459,14 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            NGUITools.SetActive(Pnl_Popup_Fail, true);
-            StartCoroutine(DisplayScore(Fail_Txt_Score, 10));
-            Time.timeScale = 0f;
+            ShowFailPopup();
         }
+    }
+
+    private void ShowFailPopup()
+    {
+        Time.timeScale = 0f;
+        NGUITools.SetActive(Pnl_Popup_Fail, true);
     }
 
     public void OnApplicationPause(bool pause)
@@ -454,7 +494,7 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log(this.name + " >>> PauseGame()");
 
-        if (Player._controller.IsDead || IsStageClear)
+        if (Player._controller.IsDead || IsLevelCleared)
             return;
 
         IsPaused = true;
@@ -468,7 +508,7 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log(this.name + " >>> ResumeGame()");
 
-        if (!IsGameStarted || IsStageClear)
+        if (!IsGameStarted || IsLevelCleared)
             return;
 
         IsPaused = false;
