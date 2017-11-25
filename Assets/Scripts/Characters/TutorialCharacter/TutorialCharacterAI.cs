@@ -183,13 +183,11 @@ public class TutorialCharacterAI : MonoBehaviour
 
     public void TweenUpQuote()
     {
-        Debug.Log("Hongyeol::TweenUpQuote");
         iTween.MoveBy(quote, iTween.Hash("y", 0.02f, "easeType", iTween.EaseType.spring, "time", 0.1f));
     }
 
     public void TweenDownQuote()
     {
-        Debug.Log("Hongyeol::TweenDownQuote");
         iTween.MoveBy(quote, iTween.Hash("y", -0.02f, "easeType", iTween.EaseType.linear, "time", 0.1f));
     }
 

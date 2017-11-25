@@ -10,9 +10,11 @@ public class LevelManager : MonoBehaviour
     public bool DebugMode;
 
     //스테이지
+    public GameObject MapController;
     public int StageFPS;
     public string StageName { get; private set; }
     public int StageIdx { get; private set; }
+    public StageDifficulty StageDifficulty { get; private set; }
     public string SongName;
     public bool IsGameStarted { get; set; }
     public bool IsPaused { get; private set; }
@@ -106,9 +108,10 @@ public class LevelManager : MonoBehaviour
         SaveData.LoadHiScore();
         ScreenFade.Fade(Color.black, 1f, 0f, 2f, 0f, true);
 
-
         StageName = SceneManager.GetActiveScene().name;
-        StageIdx = int.Parse(StageName.Substring(5, 2));
+        StageIdx = SaveData.selectedStageIdx;
+        StageDifficulty = (StageDifficulty)SaveData.selectedStageDifficulty;
+
         IsGameStarted = false;
         IsPaused = false;
         IsStageClear = false;
@@ -159,6 +162,7 @@ public class LevelManager : MonoBehaviour
         NGUITools.SetActive(Pnl_FadeOut, false);
         state = EvalState.PERFECT;
 
+        SetMap();
     }
 
     public void Start()
@@ -170,6 +174,26 @@ public class LevelManager : MonoBehaviour
     {
         EvalQuote.localPosition = new Vector3(-300, EvalQuotePos.position.y * 100, 0);
         //ScoreCount();
+    }
+
+    private void SetMap()
+    {
+        switch (StageDifficulty)
+        {
+            case StageDifficulty.Locked:
+                break;
+            case StageDifficulty.Easy:
+                MapController.transform.Find("EasyMap").transform.parent = Foreground;
+                break;
+            case StageDifficulty.Normal:
+                MapController.transform.Find("NormalMap").transform.parent = Foreground;
+                break;
+            case StageDifficulty.Hard:
+                MapController.transform.Find("HardMap").transform.parent = Foreground;
+                break;
+            default:
+                break;
+        }
     }
 
     private IEnumerator LoadBgmCo()

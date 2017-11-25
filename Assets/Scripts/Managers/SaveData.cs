@@ -1,5 +1,28 @@
 ﻿using UnityEngine;
 
+public enum StageID
+{
+    PROLOGUE_STAGE,
+    STAGE_01,
+    STAGE_02,
+    STAGE_03,
+    STAGE_04,
+    STAGE_05,
+    STAGE_06,
+    STAGE_07,
+    STAGE_08,
+    STAGE_09,
+    STAGE_10,
+}
+
+public enum StageDifficulty
+{
+    Locked, //0
+    Easy,   //1
+    Normal, //2
+    Hard    //3
+}
+
 public class SaveData : MonoBehaviour
 {
     public static SaveData Instance { get; private set; }
@@ -8,7 +31,7 @@ public class SaveData : MonoBehaviour
     const int NumOfStages = 6;
 
     public static int[] HiScore = new int[NumOfStages] { 0, 0, 0, 0, 0, 0 };
-    public static int[] StageDifficulty = new int[NumOfStages] { 0, 0, 0, 0, 0, 0 };
+    public static int[] StageDifficultyArray = new int[NumOfStages] { 0, 0, 0, 0, 0, 0 };
 
     //설정 데이터 초기화
     public static string MusicOnOff = "ON";
@@ -18,6 +41,10 @@ public class SaveData : MonoBehaviour
     public static string AutoRestartOnOff = "ON";
     public static string GooglePley = "ON";
     public static string Facebook = "OFF";
+
+    //스테이지 인덱스 및 난이도 초기화
+    public static int selectedStageIdx = 0;
+    public static StageDifficulty selectedStageDifficulty = StageDifficulty.Easy;
 
     void Awake()
     {
@@ -118,7 +145,7 @@ public class SaveData : MonoBehaviour
                 stageDifficultyData.DecodeDataPackString(stageDifficultyData.PlayerPrefsGetStringUTF8("StageDifficultyData"));
                 for (int i = 0; i < 6; i++)
                 {
-                    StageDifficulty[i] = (int)stageDifficultyData.GetData("Stage" + i);
+                    StageDifficultyArray[i] = (int)stageDifficultyData.GetData("Stage" + i);
                 }
             }
             result = true;
@@ -142,7 +169,7 @@ public class SaveData : MonoBehaviour
             zFoxDataPackString stageDifficultyData = new zFoxDataPackString();
             for (int i = 0; i < 6; i++)
             {
-                stageDifficultyData.Add("Stage" + i, StageDifficulty[i]);
+                stageDifficultyData.Add("Stage" + i, StageDifficultyArray[i]);
             }
             stageDifficultyData.PlayerPrefsSetStringUTF8("LoadDifficultyData", stageDifficultyData.EncodeDataPackString());
 
@@ -217,7 +244,7 @@ public class SaveData : MonoBehaviour
             for (int i = 0; i < NumOfStages; i++)
             {
                 HiScore[i] = 0;
-                StageDifficulty[i] = 0;
+                StageDifficultyArray[i] = 0;
             }
         }
     }

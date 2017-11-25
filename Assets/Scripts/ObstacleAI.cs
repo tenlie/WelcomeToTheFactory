@@ -19,6 +19,9 @@ public class ObstacleAI : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+            //block for test
+            return;
+
             var player = col.GetComponent<Player>();
             if (player == null)
                 return;

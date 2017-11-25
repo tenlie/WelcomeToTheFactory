@@ -53,12 +53,13 @@ public class EnemyAI : MonoBehaviour
     {
         if (col.CompareTag("LOAD") && !HasEnteredCamera)
         {
+            return;
             HasEnteredCamera = true;
             _collider.enabled = true;
         }
 
         //Block Hits For Tests
-        //return;
+        return;
 
         if (col.CompareTag("Player"))
         {
@@ -129,6 +130,18 @@ public class EnemyAI : MonoBehaviour
             _collider.enabled = false;
             gameObject.SetActive(false);
         }
+    }
+
+    public virtual void Init()
+    {
+        _collider.enabled = true;
+        HasEnteredCamera = true;
+        Move();
+    }
+
+    public virtual void Move()
+    {
+        Debug.Log("virtual Move");
     }
 }
 

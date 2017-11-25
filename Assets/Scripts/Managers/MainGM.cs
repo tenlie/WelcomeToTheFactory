@@ -50,15 +50,8 @@ public class MainGM : MonoBehaviour
     public GameObject btn_Credits;
     public GameObject btn_TermsOfUse;
 
-    public int currStageIdx { get; set; }
-
-    enum Difficulty
-    {
-        Locked, //0
-        Easy,   //1
-        Normal, //2
-        Hard    //3
-    }
+    public int selectedStageIdx { get; set; }
+    public StageDifficulty selectedStageDiffulty { get; set; }
 
     void Awake()
     {
@@ -175,7 +168,7 @@ public class MainGM : MonoBehaviour
         LobbySoundManager.Instance.PlayBGM();
     }
 
-    public void ClickPlayStage(GameObject go)
+    public void OnClickPlayStage(GameObject go)
     {
         StartCoroutine(GoOnToSelectedStage(go));
     }
@@ -183,8 +176,15 @@ public class MainGM : MonoBehaviour
     IEnumerator GoOnToSelectedStage(GameObject go)
     {
 #if UNITY_EDITOR
+        if (null == go)
+        {
+            yield break;
+        }
         Debug.Log(this.name + " >>> PlayStage >>> " + go.name + " Pressed. Loading " + go.name.Substring(0, 7) + "...");
 #endif
+        SaveData.selectedStageIdx = selectedStageIdx;
+        SaveData.selectedStageDifficulty = selectedStageDiffulty;
+
         LobbySoundManager.Instance.StopBGM();
         LobbySoundManager.Instance.PlaySFX(LobbySFX.STAGE_PLAY_BTN);
         GameObject Btn_PlayStage = go.transform.Find("Btn_PlayStage").gameObject;
@@ -205,7 +205,7 @@ public class MainGM : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         ScreenFade.Fade(Color.black, 0f, 1f, 1f, 0f, true);
         //Splashsceen=0, Lobby=1이므로 각 stage의 index는 currStageIdx + 2
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(currStageIdx + 2);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(selectedStageIdx + 2);
         asyncOperation.allowSceneActivation = false;
 
         while (!asyncOperation.isDone)
@@ -304,17 +304,19 @@ public class MainGM : MonoBehaviour
         if (isFirstOnCenter)
             return;
 
-        if (centeredStage == gridStages[0]) currStageIdx = 0;
-        else if (centeredStage == gridStages[1]) currStageIdx = 1;
-        else if (centeredStage == gridStages[2]) currStageIdx = 2;
-        else if (centeredStage == gridStages[3]) currStageIdx = 3;
-        else if (centeredStage == gridStages[4]) currStageIdx = 4;
-        else if (centeredStage == gridStages[5]) currStageIdx = 5;
+        if (centeredStage == gridStages[0]) selectedStageIdx = 0; 
+        else if (centeredStage == gridStages[1]) selectedStageIdx = 1;
+        else if (centeredStage == gridStages[2]) selectedStageIdx = 2;
+        else if (centeredStage == gridStages[3]) selectedStageIdx = 3;
+        else if (centeredStage == gridStages[4]) selectedStageIdx = 4;
+        else if (centeredStage == gridStages[5]) selectedStageIdx = 5;
+
+        SetDefaultDifficulty();
 
         Debug.Log("KnowWhatIsCentered");
 
-        ChangeStageBackground(currStageIdx);
-        LobbySoundManager.Instance.ChangeBGM(currStageIdx);
+        ChangeStageBackground(selectedStageIdx);
+        LobbySoundManager.Instance.ChangeBGM(selectedStageIdx);
         LobbySoundManager.Instance.PlayBGM();
 
         previousStage = centeredStage;
@@ -335,6 +337,11 @@ public class MainGM : MonoBehaviour
         }
     }
 
+    public void SetDefaultDifficulty()
+    {
+        selectedStageDiffulty = StageDifficulty.Easy;
+    }
+
     public void LoadAndSetHighScore()
     {
         SaveData.LoadHiScore();
@@ -351,7 +358,7 @@ public class MainGM : MonoBehaviour
         SaveData.LoadStageDifficulty();
         for (int i = 1; i < gridStages.Length; i++)
         {
-            if (SaveData.StageDifficulty[i] > (int)Difficulty.Locked)
+            if (SaveData.StageDifficultyArray[i] > (int)StageDifficulty.Locked)
             {
                 NGUITools.SetActive(gridStages[i].transform.Find("Btn_PlayStage").gameObject.transform.Find("Img_PlayBrightness").gameObject, true);
                 NGUITools.SetActive(gridStages[i].transform.Find("Btn_PlayStage").gameObject.transform.Find("Img_Play").gameObject, true);
@@ -370,7 +377,7 @@ public class MainGM : MonoBehaviour
 
     public void ChangeDifficulty(GameObject easy, GameObject normal, GameObject hard)
     {
-        int difficulty = (int)Difficulty.Locked;
+        StageDifficulty difficulty = StageDifficulty.Locked;
         bool isUnlocked = false;
 
         if (easy.activeInHierarchy)
@@ -379,7 +386,7 @@ public class MainGM : MonoBehaviour
             NGUITools.SetActive(normal, false);
             NGUITools.SetActive(hard, false);
             NGUITools.SetActive(normal, true);
-            difficulty = (int)Difficulty.Easy;
+            difficulty = StageDifficulty.Easy;
         }
         else if (normal.activeInHierarchy)
         {
@@ -387,7 +394,7 @@ public class MainGM : MonoBehaviour
             NGUITools.SetActive(normal, false);
             NGUITools.SetActive(hard, false);
             NGUITools.SetActive(hard, true);
-            difficulty = (int)Difficulty.Normal;
+            difficulty = StageDifficulty.Normal;
         }
         else if (hard.activeInHierarchy)
         {
@@ -395,10 +402,12 @@ public class MainGM : MonoBehaviour
             NGUITools.SetActive(normal, false);
             NGUITools.SetActive(hard, false);
             NGUITools.SetActive(easy, true);
-            difficulty = (int)Difficulty.Hard;
+            difficulty = StageDifficulty.Hard;
         }
 
-        if (difficulty <= SaveData.StageDifficulty[currStageIdx])
+        SaveData.selectedStageDifficulty = difficulty;
+
+        if (difficulty <= (StageDifficulty)SaveData.StageDifficultyArray[selectedStageIdx])
         {
             isUnlocked = true;
         }
@@ -407,8 +416,8 @@ public class MainGM : MonoBehaviour
             isUnlocked = false;
         }
 
-        NGUITools.SetActive(gridStages[currStageIdx].transform.Find("Btn_PlayStage").gameObject.transform.Find("Img_Play").gameObject, isUnlocked);
-        NGUITools.SetActive(gridStages[currStageIdx].transform.Find("Btn_PlayStage").gameObject.transform.Find("Img_Locked").gameObject, !isUnlocked);
+        NGUITools.SetActive(gridStages[selectedStageIdx].transform.Find("Btn_PlayStage").gameObject.transform.Find("Img_Play").gameObject, isUnlocked);
+        NGUITools.SetActive(gridStages[selectedStageIdx].transform.Find("Btn_PlayStage").gameObject.transform.Find("Img_Locked").gameObject, !isUnlocked);
     }
 
     public void ShowAllUIElements(float duration)

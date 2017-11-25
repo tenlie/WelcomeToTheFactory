@@ -202,7 +202,18 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("CLEAR"))
+        if (col.CompareTag("NoteCollider") || IsDead)
+        {
+            MissNote missNote = col.GetComponent<MissNote>();
+            if (null == missNote)
+            {
+                return;
+            }
+
+            Debug.Log("_controller.InputType : " + _controller.InputType);
+            missNote.PlayNote(_controller.InputType);
+        }
+        else if (col.CompareTag("CLEAR"))
         {
             LevelManager.Instance.LevelClear();
         }

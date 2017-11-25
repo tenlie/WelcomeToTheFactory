@@ -110,14 +110,14 @@ public class MainInput : MonoBehaviour
         SpringPanel.Begin(stageSelect, new Vector3(stageSelect.transform.localPosition.x + 1280f, 0, 0), 5f);
         Debug.Log("after");
         Debug.Log("ScrollLeft: " + stageSelect.transform.localPosition.x);
-        mainGM.previousStage = mainGM.gridStages[mainGM.currStageIdx];
-        if (mainGM.currStageIdx == 0)
+        mainGM.previousStage = mainGM.gridStages[mainGM.selectedStageIdx];
+        if (mainGM.selectedStageIdx == 0)
         {
-            mainGM.currStageIdx = 5;
+            mainGM.selectedStageIdx = 5;
         }
         else
         {
-            mainGM.currStageIdx--;
+            mainGM.selectedStageIdx--;
         }
         yield return new WaitForSeconds(0.5f);
 
@@ -171,14 +171,14 @@ public class MainInput : MonoBehaviour
         SpringPanel.Begin(stageSelect, new Vector3(stageSelect.transform.localPosition.x - 1280f, 0, 0), 5f);
         Debug.Log("after");
         Debug.Log("ScrollRight: " + stageSelect.transform.localPosition.x);
-        mainGM.previousStage = mainGM.gridStages[mainGM.currStageIdx];
-        if (mainGM.currStageIdx == 0)
+        mainGM.previousStage = mainGM.gridStages[mainGM.selectedStageIdx];
+        if (mainGM.selectedStageIdx == 0)
         {
-            mainGM.currStageIdx = 5;
+            mainGM.selectedStageIdx = 5;
         }
         else
         {
-            mainGM.currStageIdx--;
+            mainGM.selectedStageIdx--;
         }
         yield return new WaitForSeconds(0.5f);
 
@@ -196,9 +196,9 @@ public class MainInput : MonoBehaviour
         Debug.Log(this.name + " >>> PreventDoubleTouch()");
 #endif
         //mainGM.stageSelect_Scrollview.SendMessage("Drag");
-        mainGM.ChangeStageBackground(mainGM.currStageIdx);
+        mainGM.ChangeStageBackground(mainGM.selectedStageIdx);
         LobbySoundManager.Instance.StopBGM();
-        LobbySoundManager.Instance.ChangeBGM(mainGM.currStageIdx);
+        LobbySoundManager.Instance.ChangeBGM(mainGM.selectedStageIdx);
         LobbySoundManager.Instance.PlayBGM();
 
         if (isScrollingLeft)

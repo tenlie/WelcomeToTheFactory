@@ -3,34 +3,18 @@ using System.Collections;
 
 public class MissNote : MonoBehaviour
 {
-    public string InputType;
-    public bool isRealNote { get; set; }
-    public PlayerController2D playerController;
-
-    void Start()
-    {
-        isRealNote = false;
-    }
-
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (Application.platform == RuntimePlatform.Android)
+        if (col.CompareTag("UNLOAD"))
         {
-            if (col.CompareTag("UNLOAD"))
-            {
-                gameObject.SetActive(false);
-            }
+            gameObject.SetActive(false);
         }
     }
 
     public void PlayNote(string type)
     {
         Debug.Log("MissNote >>> PlayNote");
-        if (InputType.Equals(type))
-        {
-            //판정
-            Evaluate();
-        }
+        Evaluate();
     }
 
     public void Evaluate()

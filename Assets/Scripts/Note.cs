@@ -30,6 +30,8 @@ public class Note : MonoBehaviour
 
     public GameObject Judgeline;
 
+    public EnemyAI enemyAI;
+
     void Start()
     {
         _boxCollider2D = GetComponent<BoxCollider2D>();
@@ -58,17 +60,22 @@ public class Note : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (Application.platform == RuntimePlatform.Android)
+        if (col.CompareTag("LOAD"))
         {
-            if (col.CompareTag("LOAD"))
+            if (Application.platform == RuntimePlatform.Android)
             {
                 AudioFileName = "Android Native Audio/" + AudioFileName.Trim();
                 _fileID = AndroidNativeAudio.load(AudioFileName);
             }
-            else if (col.CompareTag("UNLOAD"))
+
+            if (enemyAI != null)
             {
-                gameObject.SetActive(false);
+                enemyAI.Init();
             }
+        }
+        else if (col.CompareTag("UNLOAD"))
+        {
+            gameObject.SetActive(false);
         }
     }
 
